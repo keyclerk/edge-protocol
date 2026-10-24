@@ -11,8 +11,8 @@ files:
   README.md  sha256 34d2ba80f8274225a9a6f23dc0cdc1211a93cfb6fbaec5ae0c63979315fd064a
   REUSE.toml  sha256 14fd4feb0a478b74bb333c46c59a8076412fc09785fd72b8691d3910e5c74b8f
   SECURITY.md  sha256 22351ff898b2c26a7c00dc08efbe55903bd0429f38e373020434527521329207
-  brand/keyclerk-lockup-dark.svg  sha256 d8365c0020d5aabcd8377c4daea8a41c02863ad6d62f701b5fc6ec83a9dbe886
-  brand/keyclerk-lockup-light.svg  sha256 4d9b71f453af2c31034b22c70bebbd17c005a537ea8a342f202abaf7948ae7a3
+  brand/keyclerk-lockup-dark.svg  sha256 b331efe48301086d5b9bc1ad378d1c82b49dcf78c4f58fad55bd178a19738133
+  brand/keyclerk-lockup-light.svg  sha256 ad0bc0750e72ed3e3ae229a3a63e974cffea4ba36d1e4281ddc89ef11c3028d6
   brand/keyclerk-social.png  sha256 ab2a9e76be72238a16672e83686db5ce6abf787e6c2378c0679781ec68ef8d67
   conformance/edge.json  sha256 bcd058036a2b72b1a9a78cbd98842a0b28de514ebd2b6e46d675c167cb8ba4eb
   edge-protocol.md  sha256 2f6b2de53548111e0568663bd5bfc8e7f688e917be97438069c9fda3c16e6c49
