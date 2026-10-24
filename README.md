@@ -5,6 +5,12 @@
   </picture>
 </p>
 <p align="center"><em>Every key signed. Every key returned.</em></p>
+<p align="center">
+  <a href="https://github.com/keyclerk/edge-protocol/actions/workflows/ci.yml"><img src="https://github.com/keyclerk/edge-protocol/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://scorecard.dev/viewer/?uri=github.com/keyclerk/edge-protocol"><img src="https://api.scorecard.dev/projects/github.com/keyclerk/edge-protocol/badge" alt="OpenSSF Scorecard"></a>
+  <a href="https://github.com/keyclerk/edge-protocol/releases/latest"><img src="https://img.shields.io/github/v/release/keyclerk/edge-protocol" alt="Latest release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/licence-EUPL--1.2-blue" alt="Licence: EUPL-1.2"></a>
+</p>
 
 # The KeyClerk edge protocol
 
