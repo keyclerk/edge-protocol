@@ -1,0 +1,23 @@
+# SPDX-License-Identifier: EUPL-1.2
+# Every push and pull request: the conformance set parses, files match RELEASE.txt, links resolve, licensing is
+# complete (REUSE). Actions are pinned to full commit hashes; the token is read-only.
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Conformance set, release hashes and links
+        run: python3 tools/check.py
+      - name: Licensing (REUSE)
+        run: |
+          python3 -m pip install --quiet --user "reuse[charset-normalizer]==6.2.0"
+          python3 -m reuse lint

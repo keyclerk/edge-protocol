@@ -1,0 +1,38 @@
+# SPDX-License-Identifier: EUPL-1.2
+# A tag v* becomes a release: the repository at that tag as an archive, its SHA-256 sums, and a build provenance
+# attestation GitHub signs (verify with: gh attestation verify FILE --repo keyclerk/edge-protocol).
+name: release
+on:
+  push:
+    tags: ["v*"]
+permissions:
+  contents: read
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+      id-token: write
+      attestations: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Check before release
+        run: python3 tools/check.py
+      - name: Archive and checksums
+        run: |
+          name="keyclerk-edge-protocol-${GITHUB_REF_NAME}"
+          git archive --format=tar.gz --prefix="${name}/" -o "${name}.tar.gz" "${GITHUB_REF_NAME}"
+          cp conformance/edge.json "keyclerk-edge-conformance-${GITHUB_REF_NAME}.json"
+          sha256sum "${name}.tar.gz" "keyclerk-edge-conformance-${GITHUB_REF_NAME}.json" > SHA256SUMS
+      - uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8  # v4.2.2
+        with:
+          subject-checksums: SHA256SUMS
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" --verify-tag --title "${GITHUB_REF_NAME}" \
+            --notes "The KeyClerk edge protocol and conformance set at ${GITHUB_REF_NAME}. Verify: sha256sum -c SHA256SUMS; gh attestation verify FILE --repo ${GITHUB_REPOSITORY}." \
+            keyclerk-edge-protocol-*.tar.gz keyclerk-edge-conformance-*.json SHA256SUMS
