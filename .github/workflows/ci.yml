@@ -17,7 +17,8 @@ jobs:
           persist-credentials: false
       - name: Conformance set, release hashes and links
         run: python3 tools/check.py
-      - name: Licensing (REUSE)
+      - name: Licensing (REUSE) and lint (ruff)
         run: |
           python3 -m pip install --quiet --user --require-hashes -r tools/requirements-ci.txt
           python3 -m reuse lint
+          python3 -m ruff check tools

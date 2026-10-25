@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: EUPL-1.2
-# Updates for the pinned workflow actions and the hash-locked REUSE tool, weekly, as pull requests that CI checks.
+# Updates for the pinned workflow actions and the hash-locked CI tools (REUSE, ruff), weekly, as pull requests that CI checks.
 version: 2
 updates:
   - package-ecosystem: github-actions
@@ -14,5 +14,5 @@ updates:
     schedule:
       interval: weekly
     groups:
-      reuse:
+      ci-tools:
         patterns: ["*"]
