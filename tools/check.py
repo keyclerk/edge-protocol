@@ -46,6 +46,53 @@ def envelope_errors(conformance: dict) -> list[str]:
     return errors
 
 
+# Every outside standard or product the specification names is cited at its first mention, and every citation has a
+# reference with a link (CONTRIBUTING.md, "References"). A term found in the text needs its tag in the same paragraph
+# the first time it appears; terms the specification does not use are not required.
+TERMS = {
+    "Ed25519": "RFC8032", "X25519": "RFC7748", "P-256": "SP800-186", "ECDH": "SP800-56A", "HKDF": "RFC5869",
+    "HMAC": "RFC2104", "SHA-256": "FIPS180-4", "base32": "RFC4648", "base64": "RFC4648", "AES-256-GCM": "SP800-38D",
+    "SCIM": "RFC7643", "TPM": "TPM2", "tpm2_": "TPM2-TOOLS", "WebAssembly": "WASM", "OPA": "OPA-WASM",
+    "JSON": "RFC8259", "passkey": "WEBAUTHN", "Keycloak": "KEYCLOAK", "SEC1": "SEC1",
+}
+CITE = re.compile(r"\[([A-Z][A-Z0-9-]*[0-9A-Z])\]")
+ENTRY = re.compile(r"^- \[([A-Z][A-Z0-9-]*)\] (.+)$")
+
+
+def reference_errors(text: str) -> list[str]:
+    errors = []
+    body, sep, refs = text.partition("\n## References")
+    if not sep:
+        return ["edge-protocol.md: no References section (normative and informative, each entry with a link)"]
+    entries, current = {}, None
+    for line in refs.splitlines():
+        m = ENTRY.match(line)
+        if m:
+            current = m.group(1)
+            entries[current] = m.group(2)
+        elif current and line.startswith("  "):
+            entries[current] += " " + line.strip()
+        else:
+            current = None
+    for tag, entry in entries.items():
+        if "<https://" not in entry:
+            errors.append(f"References: [{tag}] has no https link")
+    if "### Normative" not in refs or "### Informative" not in refs:
+        errors.append("References: split into ### Normative and ### Informative")
+    prose = re.sub(r"```.*?```", "", body, flags=re.S)                # code blocks are not prose
+    paragraphs = [p for p in re.split(r"\n\s*\n", prose) if p.strip()]
+    cited = set(CITE.findall(prose))
+    for tag in sorted(cited - set(entries)):
+        errors.append(f"edge-protocol.md: [{tag}] is cited but has no reference")
+    for tag in sorted(set(entries) - cited):
+        errors.append(f"References: [{tag}] is never cited")
+    for term, tag in TERMS.items():
+        first = next((p for p in paragraphs if term in p), None)
+        if first is not None and f"[{tag}]" not in first:
+            errors.append(f"edge-protocol.md: {term} first appears without [{tag}] in its paragraph")
+    return errors
+
+
 def main() -> int:
     errors = []
     try:
@@ -55,6 +102,7 @@ def main() -> int:
         errors.append(f"conformance/edge.json does not parse: {e}")
     if conformance is not None:
         errors += envelope_errors(conformance)
+    errors += reference_errors((ROOT / "edge-protocol.md").read_text(encoding="utf-8"))
     listed = re.findall(r"^  (\S+)  sha256 ([0-9a-f]{64})$", (ROOT / "RELEASE.txt").read_text(encoding="utf-8"), re.M)
     if not listed:
         errors.append("RELEASE.txt lists no files")
