@@ -6,7 +6,7 @@ of leases the desk has signed, and keeps doing so for a bounded time when the de
 
 Status: version 1 of the formats named below (`kc-edge-bundle-v3`, `kc-edge-ceiling-v2`, `kc-edge-officer-v2`,
 `kc-edge-ended-v2`, `kc-unlock-v2` and the others in section 4), as shipped with KeyClerk 0.24.0; version 1.1 adds the optional `governed_roles` member of the
-bundle (section 5), from KeyClerk 0.25.0. The conformance set
+bundle (section 5), and version 1.2 the bundle long-poll (section 5), both from KeyClerk 0.25.0. The conformance set
 in `conformance/edge.json` holds the vectors every implementation must reproduce. Words like "must" are normative. A verifier ignores a member of the bundle body that this version does not name, so an
 optional bundle member can be added without a new format name. Other signed objects (the ceiling, the officer's
 statements) have exactly the members named, and an extra one is refused.
@@ -87,6 +87,16 @@ than `min(horizon of its class, ceiling.max_offline_hours)`. A lease of a class 
 visit lease lives in its own window, passes the ceiling policy too
 (kind visit: its window within `ceiling.max_offline_hours`, and an edge assured by its ceiling and its own
 attestation), and is not revoked. A lost answer: `GET /api/v1/edge/bundle?serial=N` returns the same bundle.
+
+Waiting for the next bundle (version 1.2): `GET /api/v1/edge/bundle?after=<serial>&wait=<seconds>`, both in
+the signed path. `after` is the serial of the newest bundle the edge accepted, `wait` whole seconds from 1, held to
+at most 55. The desk answers when this edge's bundle says something other than the bundle with serial `after` said
+(leases, visit leases, revocations, ceiling, policy, governed roles; never serial, issue time, format or key id), or
+when the wait ends, and always with a newly issued bundle, so a timed-out wait renews the offline horizon as a pull
+does. It answers at once when the content already differs, when it does not know `after`, or when it holds its cap
+of open waits. An edge holds at most one open wait per node; a new one answers the oldest. `serial` with `wait`, and a
+malformed `wait`, are refused. Without `wait`, a pull is as in version 1.1; an older desk answers at once, which is a
+plain pull. After an immediate answer an edge waits its normal pull interval before waiting again.
 
 Governed roles (version 1.1): `governed_roles`, when present, lists the edge roles KeyClerk governs on this edge as
 SCIM 2.0 Group shapes (RFC 7643 section 4.2), `[{displayName, externalId?}]`, each role once: the roles the edge's
