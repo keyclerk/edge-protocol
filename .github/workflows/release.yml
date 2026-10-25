@@ -33,6 +33,15 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "${GITHUB_REF_NAME}" --verify-tag --title "${GITHUB_REF_NAME}" \
-            --notes "The KeyClerk edge protocol and conformance set at ${GITHUB_REF_NAME}. Verify: sha256sum -c SHA256SUMS; gh attestation verify FILE --repo ${GITHUB_REPOSITORY}." \
+          version="${GITHUB_REF_NAME#v}"
+          awk -v v="## ${version} " 'index($0, v) == 1 {on = 1; next} /^## / {on = 0} on' CHANGELOG.md > notes.md
+          if ! grep -q '[^[:space:]]' notes.md; then
+            echo "CHANGELOG.md has no section for ${version}: add it before tagging" >&2
+            exit 1
+          fi
+          {
+            echo
+            echo "Verify: \`sha256sum -c SHA256SUMS\`, then \`gh attestation verify FILE --repo ${GITHUB_REPOSITORY}\`."
+          } >> notes.md
+          gh release create "${GITHUB_REF_NAME}" --verify-tag --title "${GITHUB_REF_NAME}" --notes-file notes.md \
             keyclerk-edge-protocol-*.tar.gz keyclerk-edge-conformance-*.json SHA256SUMS

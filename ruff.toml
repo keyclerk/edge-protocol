@@ -1,0 +1,8 @@
+# SPDX-License-Identifier: EUPL-1.2
+# The linter CI runs over tools/: pyflakes, pycodestyle, bugbear, pyupgrade and bandit's security rules.
+line-length = 120
+target-version = "py312"
+
+[lint]
+select = ["E", "F", "W", "B", "UP", "S"]
+ignore = ["S101"]   # assert is how the fuzz target states its properties
