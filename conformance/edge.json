@@ -689,7 +689,7 @@
     "expected": {
      "ok": true
     },
-    "name": "both nodes ended",
+    "name": "both nodes ended (the HA profile)",
     "pins": {
      "bundle_key": "8a88e3dd7409f195fd52db2d3cba5d72ca6709bf1d94121bf3748801b40f6f5c",
      "edge": "edge-a",
@@ -845,7 +845,7 @@
      }
     },
     "format": "kc-edge-officer-v2",
-    "name": "officer and both nodes",
+    "name": "officer and both nodes (the HA profile)",
     "required": [
      "8139770ea87d175f56a35466c34c7ecccb8d8a91b4ee37a25df60f5b8fc9b394",
      "6e7a1cdd29b0b78fd13af4c5598feff4ef2a97166e3ca6f2e4fbfccd80505bf1",
@@ -1192,6 +1192,7 @@
   "cases": [
    {
     "expected": {
+     "governed_roles": null,
      "leases": [
       "L-1"
      ],
@@ -1223,6 +1224,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -1248,6 +1250,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -1273,6 +1276,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -1298,6 +1302,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -1323,6 +1328,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -1348,6 +1354,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -1374,6 +1381,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": true,
      "state": {
@@ -1403,12 +1411,13 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
      "visit_leases": []
     },
-    "name": "a float in the signed bytes",
+    "name": "a fractional float in the signed bytes",
     "now": "2026-10-23T13:00:00Z",
     "pins": {
      "bundle_key": "8a88e3dd7409f195fd52db2d3cba5d72ca6709bf1d94121bf3748801b40f6f5c",
@@ -1428,6 +1437,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -1453,6 +1463,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -1478,6 +1489,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -1503,12 +1515,13 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
      "visit_leases": []
     },
-    "name": "serial true",
+    "name": "serial true in the signed bytes",
     "now": "2026-10-23T13:00:00Z",
     "pins": {
      "bundle_key": "8a88e3dd7409f195fd52db2d3cba5d72ca6709bf1d94121bf3748801b40f6f5c",
@@ -1528,6 +1541,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -1553,6 +1567,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -1578,6 +1593,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -1603,6 +1619,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -1628,6 +1645,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -1653,6 +1671,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": true,
      "state": {
@@ -1682,6 +1701,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [
       "L-1"
      ],
@@ -1713,6 +1733,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [
       "L-1"
      ],
@@ -1746,6 +1767,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [
       "L-1"
      ],
@@ -1777,6 +1799,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -1803,6 +1826,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -1829,6 +1853,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -1855,6 +1880,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [
       "L-1"
      ],
@@ -1887,6 +1913,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -1912,6 +1939,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -1937,6 +1965,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -1962,12 +1991,13 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
      "visit_leases": []
     },
-    "name": "a float in the signed bytes (2)",
+    "name": "a float in the signed bytes",
     "now": "2026-10-23T13:00:00Z",
     "pins": {
      "bundle_key": "8a88e3dd7409f195fd52db2d3cba5d72ca6709bf1d94121bf3748801b40f6f5c",
@@ -1987,6 +2017,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -2012,6 +2043,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -2037,6 +2069,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -2062,6 +2095,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -2087,6 +2121,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -2112,6 +2147,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -2137,6 +2173,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -2162,6 +2199,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [
       "L-1"
      ],
@@ -2194,6 +2232,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -2220,6 +2259,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": true,
      "state": {
@@ -2249,6 +2289,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -2274,6 +2315,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -2299,6 +2341,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": true,
      "state": {
@@ -2328,6 +2371,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": true,
      "state": {
@@ -2357,6 +2401,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [
       "L-1"
      ],
@@ -2388,6 +2433,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -2413,6 +2459,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -2438,6 +2485,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -2463,6 +2511,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -2488,6 +2537,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -2513,6 +2563,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -2539,6 +2590,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [
       "L-1"
      ],
@@ -2571,6 +2623,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -2596,6 +2649,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -2621,6 +2675,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [
       "L-1"
      ],
@@ -2652,6 +2707,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -2677,6 +2733,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [
       "L-1",
       "L-2"
@@ -2709,6 +2766,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [
       "L-1"
      ],
@@ -2740,6 +2798,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -2766,6 +2825,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -2791,6 +2851,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -2816,6 +2877,7 @@
    },
    {
     "expected": {
+     "governed_roles": null,
      "leases": [],
      "ok": false,
      "state": null,
@@ -2838,8 +2900,245 @@
     "state": {
      "serial": 6
     }
+   },
+   {
+    "expected": {
+     "governed_roles": [
+      "engineer",
+      "operator"
+     ],
+     "leases": [
+      "L-1"
+     ],
+     "ok": true,
+     "state": {
+      "ceiling_serial": 2,
+      "newest": "2026-10-23T12:00:00Z",
+      "serial": 7
+     },
+     "visit_leases": []
+    },
+    "name": "0025 governed roles present",
+    "now": "2026-10-23T13:00:00Z",
+    "pins": {
+     "bundle_key": "8a88e3dd7409f195fd52db2d3cba5d72ca6709bf1d94121bf3748801b40f6f5c",
+     "edge": "edge-a",
+     "officer_key": "8139770ea87d175f56a35466c34c7ecccb8d8a91b4ee37a25df60f5b8fc9b394",
+     "release_key": null
+    },
+    "sealed": {
+     "bytes": "eyJjZWlsaW5nIjp7ImJ5dGVzIjoiZXlKamJHRnpjMlZ6SWpwYklteHZkeUlzSW1Wc1pYWmhkR1ZrSWl3aWNISnBkbWxzWldkbFpDSmRMQ0psWkdkbElqb2laV1JuWlMxaElpd2labTl5YldGMElqb2lhMk10WldSblpTMWpaV2xzYVc1bkxYWXlJaXdpYTJWNVgybGtJam9pTm1Fek9EQXpaRFZtTURVNU9UQXlZU0lzSW0xaGVGOXNaV0Z6WlY5b2IzVnljeUk2TnpJd0xDSnRZWGhmYjJabWJHbHVaVjlvYjNWeWN5STZNVElzSW5CbGNuTnZibk1pT2xzaWFXUndPamRqTVdZdFlXNXVJbDBzSW5CdmNuUnpJanBiTWpKZExDSndjbTltYVd4bElqb2lZWE56ZFhKbFpDSXNJbkpsYlc5MFpWOXlaV0ZqYUNJNkltOW1aaUlzSW5KdmJHVnpJanBiWFN3aWMyVnlhV0ZzSWpveUxDSnphV2R1WldSZllYUWlPaUl5TURJMkxURXdMVEl6VkRFd09qQXdPakF3V2lJc0luUmhjbWRsZEhNaU9sc2ljR3hqTFhOemFDSmRmUT09Iiwia2V5IjoiODEzOTc3MGVhODdkMTc1ZjU2YTM1NDY2YzM0YzdlY2NjYjhkOGE5MWI0ZWUzN2EyNWRmNjBmNWI4ZmM5YjM5NCIsImtleV9pZCI6IjZhMzgwM2Q1ZjA1OTkwMmEiLCJzaWduYXR1cmUiOiI2OTk5ZmUwOWMzMzJhZTI0MGU2MWUwZjQzMjExOTUxMmNlNGM4Y2Q0ODQ0N2JhYzc4YzEzOTU4YTI3M2Q2ODA4NDEwYzcyYmY2MjRhMWY0NGRjMmVjOWJhNzNkYzk5MzY2ZDcwMzI4NDk1NjRkMjA2Yzk0Mjk4MDJkZTRmM2QwYSJ9LCJlZGdlIjoiZWRnZS1hIiwiZm9ybWF0Ijoia2MtZWRnZS1idW5kbGUtdjMiLCJnb3Zlcm5lZF9yb2xlcyI6W3siZGlzcGxheU5hbWUiOiJlbmdpbmVlciJ9LHsiZGlzcGxheU5hbWUiOiJvcGVyYXRvciJ9XSwiaG9yaXpvbnMiOnsiZWxldmF0ZWQiOjI0LCJsb3ciOjE2OCwicHJpdmlsZWdlZCI6MX0sImlzc3VlZCI6IjIwMjYtMTAtMjNUMTI6MDA6MDBaIiwia2V5X2lkIjoiMzQ3NTBmOThiZDU5ZmNmYyIsImxlYXNlcyI6W3siY2xhc3MiOiJsb3ciLCJlbWFpbCI6ImFubkBleGFtcGxlLnRlc3QiLCJmcm9tIjoiMjAyNi0xMC0yM1QxMTowMDowMFoiLCJsZWFzZV9pZCI6IkwtMSIsInBlcnNvbiI6ImlkcDo3YzFmLWFubiIsInJvbGUiOiJvcGVyYXRvciIsInJvbGVzIjpbXSwidGFyZ2V0IjoicGxjLXNzaCIsInVudGlsIjoiMjAyNi0xMS0yM1QxMTowMDowMFoiLCJ1c2VybmFtZSI6ImFubiJ9XSwicG9saWN5Ijp7ImVudHJ5cG9pbnRzIjpbXSwibW9kdWxlcyI6e30sInJlbGVhc2UiOm51bGx9LCJyZXZva2VkIjpbXSwic2VyaWFsIjo3LCJ2aXNpdF9sZWFzZXMiOltdfQ==",
+     "key": "8a88e3dd7409f195fd52db2d3cba5d72ca6709bf1d94121bf3748801b40f6f5c",
+     "key_id": "34750f98bd59fcfc",
+     "signature": "3771c9b3c557847678ab9b7a443b22da72b2b16e0e449273d918cae9c6fe6248fb7bf7d3c4426be58b21b077d4c08cd83f88820ec8df91c1339abc2dea7ab006"
+    },
+    "state": {
+     "serial": 6
+    }
+   },
+   {
+    "expected": {
+     "governed_roles": null,
+     "leases": [
+      "L-1"
+     ],
+     "ok": true,
+     "state": {
+      "ceiling_serial": 2,
+      "newest": "2026-10-23T12:00:00Z",
+      "serial": 7
+     },
+     "visit_leases": []
+    },
+    "name": "0025 governed roles absent: no catalogue, the edge keeps its own targets file",
+    "now": "2026-10-23T13:00:00Z",
+    "pins": {
+     "bundle_key": "8a88e3dd7409f195fd52db2d3cba5d72ca6709bf1d94121bf3748801b40f6f5c",
+     "edge": "edge-a",
+     "officer_key": "8139770ea87d175f56a35466c34c7ecccb8d8a91b4ee37a25df60f5b8fc9b394",
+     "release_key": null
+    },
+    "sealed": {
+     "bytes": "eyJjZWlsaW5nIjp7ImJ5dGVzIjoiZXlKamJHRnpjMlZ6SWpwYklteHZkeUlzSW1Wc1pYWmhkR1ZrSWl3aWNISnBkbWxzWldkbFpDSmRMQ0psWkdkbElqb2laV1JuWlMxaElpd2labTl5YldGMElqb2lhMk10WldSblpTMWpaV2xzYVc1bkxYWXlJaXdpYTJWNVgybGtJam9pTm1Fek9EQXpaRFZtTURVNU9UQXlZU0lzSW0xaGVGOXNaV0Z6WlY5b2IzVnljeUk2TnpJd0xDSnRZWGhmYjJabWJHbHVaVjlvYjNWeWN5STZNVElzSW5CbGNuTnZibk1pT2xzaWFXUndPamRqTVdZdFlXNXVJbDBzSW5CdmNuUnpJanBiTWpKZExDSndjbTltYVd4bElqb2lZWE56ZFhKbFpDSXNJbkpsYlc5MFpWOXlaV0ZqYUNJNkltOW1aaUlzSW5KdmJHVnpJanBiWFN3aWMyVnlhV0ZzSWpveUxDSnphV2R1WldSZllYUWlPaUl5TURJMkxURXdMVEl6VkRFd09qQXdPakF3V2lJc0luUmhjbWRsZEhNaU9sc2ljR3hqTFhOemFDSmRmUT09Iiwia2V5IjoiODEzOTc3MGVhODdkMTc1ZjU2YTM1NDY2YzM0YzdlY2NjYjhkOGE5MWI0ZWUzN2EyNWRmNjBmNWI4ZmM5YjM5NCIsImtleV9pZCI6IjZhMzgwM2Q1ZjA1OTkwMmEiLCJzaWduYXR1cmUiOiI2OTk5ZmUwOWMzMzJhZTI0MGU2MWUwZjQzMjExOTUxMmNlNGM4Y2Q0ODQ0N2JhYzc4YzEzOTU4YTI3M2Q2ODA4NDEwYzcyYmY2MjRhMWY0NGRjMmVjOWJhNzNkYzk5MzY2ZDcwMzI4NDk1NjRkMjA2Yzk0Mjk4MDJkZTRmM2QwYSJ9LCJlZGdlIjoiZWRnZS1hIiwiZm9ybWF0Ijoia2MtZWRnZS1idW5kbGUtdjMiLCJob3Jpem9ucyI6eyJlbGV2YXRlZCI6MjQsImxvdyI6MTY4LCJwcml2aWxlZ2VkIjoxfSwiaXNzdWVkIjoiMjAyNi0xMC0yM1QxMjowMDowMFoiLCJrZXlfaWQiOiIzNDc1MGY5OGJkNTlmY2ZjIiwibGVhc2VzIjpbeyJjbGFzcyI6ImxvdyIsImVtYWlsIjoiYW5uQGV4YW1wbGUudGVzdCIsImZyb20iOiIyMDI2LTEwLTIzVDExOjAwOjAwWiIsImxlYXNlX2lkIjoiTC0xIiwicGVyc29uIjoiaWRwOjdjMWYtYW5uIiwicm9sZSI6Im9wZXJhdG9yIiwicm9sZXMiOltdLCJ0YXJnZXQiOiJwbGMtc3NoIiwidW50aWwiOiIyMDI2LTExLTIzVDExOjAwOjAwWiIsInVzZXJuYW1lIjoiYW5uIn1dLCJwb2xpY3kiOnsiZW50cnlwb2ludHMiOltdLCJtb2R1bGVzIjp7fSwicmVsZWFzZSI6bnVsbH0sInJldm9rZWQiOltdLCJzZXJpYWwiOjcsInZpc2l0X2xlYXNlcyI6W119",
+     "key": "8a88e3dd7409f195fd52db2d3cba5d72ca6709bf1d94121bf3748801b40f6f5c",
+     "key_id": "34750f98bd59fcfc",
+     "signature": "cecdcdb77878eb94a4a90183a286b6a212fb1df271b754da9a92e0181a276287fcdc0b19b1edfd114135fd77a322c1d6fb06de0a60efb57a7a78acc57a058306"
+    },
+    "state": {
+     "serial": 6
+    }
+   },
+   {
+    "expected": {
+     "governed_roles": [],
+     "leases": [
+      "L-1"
+     ],
+     "ok": true,
+     "state": {
+      "ceiling_serial": 2,
+      "newest": "2026-10-23T12:00:00Z",
+      "serial": 7
+     },
+     "visit_leases": []
+    },
+    "name": "0025 governed roles signed and empty: none governed here",
+    "now": "2026-10-23T13:00:00Z",
+    "pins": {
+     "bundle_key": "8a88e3dd7409f195fd52db2d3cba5d72ca6709bf1d94121bf3748801b40f6f5c",
+     "edge": "edge-a",
+     "officer_key": "8139770ea87d175f56a35466c34c7ecccb8d8a91b4ee37a25df60f5b8fc9b394",
+     "release_key": null
+    },
+    "sealed": {
+     "bytes": "eyJjZWlsaW5nIjp7ImJ5dGVzIjoiZXlKamJHRnpjMlZ6SWpwYklteHZkeUlzSW1Wc1pYWmhkR1ZrSWl3aWNISnBkbWxzWldkbFpDSmRMQ0psWkdkbElqb2laV1JuWlMxaElpd2labTl5YldGMElqb2lhMk10WldSblpTMWpaV2xzYVc1bkxYWXlJaXdpYTJWNVgybGtJam9pTm1Fek9EQXpaRFZtTURVNU9UQXlZU0lzSW0xaGVGOXNaV0Z6WlY5b2IzVnljeUk2TnpJd0xDSnRZWGhmYjJabWJHbHVaVjlvYjNWeWN5STZNVElzSW5CbGNuTnZibk1pT2xzaWFXUndPamRqTVdZdFlXNXVJbDBzSW5CdmNuUnpJanBiTWpKZExDSndjbTltYVd4bElqb2lZWE56ZFhKbFpDSXNJbkpsYlc5MFpWOXlaV0ZqYUNJNkltOW1aaUlzSW5KdmJHVnpJanBiWFN3aWMyVnlhV0ZzSWpveUxDSnphV2R1WldSZllYUWlPaUl5TURJMkxURXdMVEl6VkRFd09qQXdPakF3V2lJc0luUmhjbWRsZEhNaU9sc2ljR3hqTFhOemFDSmRmUT09Iiwia2V5IjoiODEzOTc3MGVhODdkMTc1ZjU2YTM1NDY2YzM0YzdlY2NjYjhkOGE5MWI0ZWUzN2EyNWRmNjBmNWI4ZmM5YjM5NCIsImtleV9pZCI6IjZhMzgwM2Q1ZjA1OTkwMmEiLCJzaWduYXR1cmUiOiI2OTk5ZmUwOWMzMzJhZTI0MGU2MWUwZjQzMjExOTUxMmNlNGM4Y2Q0ODQ0N2JhYzc4YzEzOTU4YTI3M2Q2ODA4NDEwYzcyYmY2MjRhMWY0NGRjMmVjOWJhNzNkYzk5MzY2ZDcwMzI4NDk1NjRkMjA2Yzk0Mjk4MDJkZTRmM2QwYSJ9LCJlZGdlIjoiZWRnZS1hIiwiZm9ybWF0Ijoia2MtZWRnZS1idW5kbGUtdjMiLCJnb3Zlcm5lZF9yb2xlcyI6W10sImhvcml6b25zIjp7ImVsZXZhdGVkIjoyNCwibG93IjoxNjgsInByaXZpbGVnZWQiOjF9LCJpc3N1ZWQiOiIyMDI2LTEwLTIzVDEyOjAwOjAwWiIsImtleV9pZCI6IjM0NzUwZjk4YmQ1OWZjZmMiLCJsZWFzZXMiOlt7ImNsYXNzIjoibG93IiwiZW1haWwiOiJhbm5AZXhhbXBsZS50ZXN0IiwiZnJvbSI6IjIwMjYtMTAtMjNUMTE6MDA6MDBaIiwibGVhc2VfaWQiOiJMLTEiLCJwZXJzb24iOiJpZHA6N2MxZi1hbm4iLCJyb2xlIjoib3BlcmF0b3IiLCJyb2xlcyI6W10sInRhcmdldCI6InBsYy1zc2giLCJ1bnRpbCI6IjIwMjYtMTEtMjNUMTE6MDA6MDBaIiwidXNlcm5hbWUiOiJhbm4ifV0sInBvbGljeSI6eyJlbnRyeXBvaW50cyI6W10sIm1vZHVsZXMiOnt9LCJyZWxlYXNlIjpudWxsfSwicmV2b2tlZCI6W10sInNlcmlhbCI6NywidmlzaXRfbGVhc2VzIjpbXX0=",
+     "key": "8a88e3dd7409f195fd52db2d3cba5d72ca6709bf1d94121bf3748801b40f6f5c",
+     "key_id": "34750f98bd59fcfc",
+     "signature": "39c8bf91c13ab24af692b459032c1ab5da951d596f6eae005e2092334a44939f60110030026c9a7d4bc6b8c64df8a0dcd995bc56cec7b13ad5de3f2d131d1d0c"
+    },
+    "state": {
+     "serial": 6
+    }
+   },
+   {
+    "expected": {
+     "governed_roles": [
+      "operator"
+     ],
+     "leases": [
+      "L-1"
+     ],
+     "ok": true,
+     "state": {
+      "ceiling_serial": 2,
+      "newest": "2026-10-23T12:00:00Z",
+      "serial": 7
+     },
+     "visit_leases": []
+    },
+    "name": "0025 governed roles with an externalId",
+    "now": "2026-10-23T13:00:00Z",
+    "pins": {
+     "bundle_key": "8a88e3dd7409f195fd52db2d3cba5d72ca6709bf1d94121bf3748801b40f6f5c",
+     "edge": "edge-a",
+     "officer_key": "8139770ea87d175f56a35466c34c7ecccb8d8a91b4ee37a25df60f5b8fc9b394",
+     "release_key": null
+    },
+    "sealed": {
+     "bytes": "eyJjZWlsaW5nIjp7ImJ5dGVzIjoiZXlKamJHRnpjMlZ6SWpwYklteHZkeUlzSW1Wc1pYWmhkR1ZrSWl3aWNISnBkbWxzWldkbFpDSmRMQ0psWkdkbElqb2laV1JuWlMxaElpd2labTl5YldGMElqb2lhMk10WldSblpTMWpaV2xzYVc1bkxYWXlJaXdpYTJWNVgybGtJam9pTm1Fek9EQXpaRFZtTURVNU9UQXlZU0lzSW0xaGVGOXNaV0Z6WlY5b2IzVnljeUk2TnpJd0xDSnRZWGhmYjJabWJHbHVaVjlvYjNWeWN5STZNVElzSW5CbGNuTnZibk1pT2xzaWFXUndPamRqTVdZdFlXNXVJbDBzSW5CdmNuUnpJanBiTWpKZExDSndjbTltYVd4bElqb2lZWE56ZFhKbFpDSXNJbkpsYlc5MFpWOXlaV0ZqYUNJNkltOW1aaUlzSW5KdmJHVnpJanBiWFN3aWMyVnlhV0ZzSWpveUxDSnphV2R1WldSZllYUWlPaUl5TURJMkxURXdMVEl6VkRFd09qQXdPakF3V2lJc0luUmhjbWRsZEhNaU9sc2ljR3hqTFhOemFDSmRmUT09Iiwia2V5IjoiODEzOTc3MGVhODdkMTc1ZjU2YTM1NDY2YzM0YzdlY2NjYjhkOGE5MWI0ZWUzN2EyNWRmNjBmNWI4ZmM5YjM5NCIsImtleV9pZCI6IjZhMzgwM2Q1ZjA1OTkwMmEiLCJzaWduYXR1cmUiOiI2OTk5ZmUwOWMzMzJhZTI0MGU2MWUwZjQzMjExOTUxMmNlNGM4Y2Q0ODQ0N2JhYzc4YzEzOTU4YTI3M2Q2ODA4NDEwYzcyYmY2MjRhMWY0NGRjMmVjOWJhNzNkYzk5MzY2ZDcwMzI4NDk1NjRkMjA2Yzk0Mjk4MDJkZTRmM2QwYSJ9LCJlZGdlIjoiZWRnZS1hIiwiZm9ybWF0Ijoia2MtZWRnZS1idW5kbGUtdjMiLCJnb3Zlcm5lZF9yb2xlcyI6W3siZGlzcGxheU5hbWUiOiJvcGVyYXRvciIsImV4dGVybmFsSWQiOiJwbGMtb3BlcmF0b3IifV0sImhvcml6b25zIjp7ImVsZXZhdGVkIjoyNCwibG93IjoxNjgsInByaXZpbGVnZWQiOjF9LCJpc3N1ZWQiOiIyMDI2LTEwLTIzVDEyOjAwOjAwWiIsImtleV9pZCI6IjM0NzUwZjk4YmQ1OWZjZmMiLCJsZWFzZXMiOlt7ImNsYXNzIjoibG93IiwiZW1haWwiOiJhbm5AZXhhbXBsZS50ZXN0IiwiZnJvbSI6IjIwMjYtMTAtMjNUMTE6MDA6MDBaIiwibGVhc2VfaWQiOiJMLTEiLCJwZXJzb24iOiJpZHA6N2MxZi1hbm4iLCJyb2xlIjoib3BlcmF0b3IiLCJyb2xlcyI6W10sInRhcmdldCI6InBsYy1zc2giLCJ1bnRpbCI6IjIwMjYtMTEtMjNUMTE6MDA6MDBaIiwidXNlcm5hbWUiOiJhbm4ifV0sInBvbGljeSI6eyJlbnRyeXBvaW50cyI6W10sIm1vZHVsZXMiOnt9LCJyZWxlYXNlIjpudWxsfSwicmV2b2tlZCI6W10sInNlcmlhbCI6NywidmlzaXRfbGVhc2VzIjpbXX0=",
+     "key": "8a88e3dd7409f195fd52db2d3cba5d72ca6709bf1d94121bf3748801b40f6f5c",
+     "key_id": "34750f98bd59fcfc",
+     "signature": "7f4de62d6f9ff52cff810ab12a93703a8ca4f83450b2669db5d955ae43f9210cebe3af0e4233c0058fe0f59569e6a3df6f923974f27fa9720aec0511b5ad2b01"
+    },
+    "state": {
+     "serial": 6
+    }
+   },
+   {
+    "expected": {
+     "governed_roles": null,
+     "leases": [],
+     "ok": false,
+     "state": null,
+     "visit_leases": []
+    },
+    "name": "0025 governed roles naming a role twice",
+    "now": "2026-10-23T13:00:00Z",
+    "pins": {
+     "bundle_key": "8a88e3dd7409f195fd52db2d3cba5d72ca6709bf1d94121bf3748801b40f6f5c",
+     "edge": "edge-a",
+     "officer_key": "8139770ea87d175f56a35466c34c7ecccb8d8a91b4ee37a25df60f5b8fc9b394",
+     "release_key": null
+    },
+    "sealed": {
+     "bytes": "eyJjZWlsaW5nIjp7ImJ5dGVzIjoiZXlKamJHRnpjMlZ6SWpwYklteHZkeUlzSW1Wc1pYWmhkR1ZrSWl3aWNISnBkbWxzWldkbFpDSmRMQ0psWkdkbElqb2laV1JuWlMxaElpd2labTl5YldGMElqb2lhMk10WldSblpTMWpaV2xzYVc1bkxYWXlJaXdpYTJWNVgybGtJam9pTm1Fek9EQXpaRFZtTURVNU9UQXlZU0lzSW0xaGVGOXNaV0Z6WlY5b2IzVnljeUk2TnpJd0xDSnRZWGhmYjJabWJHbHVaVjlvYjNWeWN5STZNVElzSW5CbGNuTnZibk1pT2xzaWFXUndPamRqTVdZdFlXNXVJbDBzSW5CdmNuUnpJanBiTWpKZExDSndjbTltYVd4bElqb2lZWE56ZFhKbFpDSXNJbkpsYlc5MFpWOXlaV0ZqYUNJNkltOW1aaUlzSW5KdmJHVnpJanBiWFN3aWMyVnlhV0ZzSWpveUxDSnphV2R1WldSZllYUWlPaUl5TURJMkxURXdMVEl6VkRFd09qQXdPakF3V2lJc0luUmhjbWRsZEhNaU9sc2ljR3hqTFhOemFDSmRmUT09Iiwia2V5IjoiODEzOTc3MGVhODdkMTc1ZjU2YTM1NDY2YzM0YzdlY2NjYjhkOGE5MWI0ZWUzN2EyNWRmNjBmNWI4ZmM5YjM5NCIsImtleV9pZCI6IjZhMzgwM2Q1ZjA1OTkwMmEiLCJzaWduYXR1cmUiOiI2OTk5ZmUwOWMzMzJhZTI0MGU2MWUwZjQzMjExOTUxMmNlNGM4Y2Q0ODQ0N2JhYzc4YzEzOTU4YTI3M2Q2ODA4NDEwYzcyYmY2MjRhMWY0NGRjMmVjOWJhNzNkYzk5MzY2ZDcwMzI4NDk1NjRkMjA2Yzk0Mjk4MDJkZTRmM2QwYSJ9LCJlZGdlIjoiZWRnZS1hIiwiZm9ybWF0Ijoia2MtZWRnZS1idW5kbGUtdjMiLCJnb3Zlcm5lZF9yb2xlcyI6W3siZGlzcGxheU5hbWUiOiJvcGVyYXRvciJ9LHsiZGlzcGxheU5hbWUiOiJvcGVyYXRvciJ9XSwiaG9yaXpvbnMiOnsiZWxldmF0ZWQiOjI0LCJsb3ciOjE2OCwicHJpdmlsZWdlZCI6MX0sImlzc3VlZCI6IjIwMjYtMTAtMjNUMTI6MDA6MDBaIiwia2V5X2lkIjoiMzQ3NTBmOThiZDU5ZmNmYyIsImxlYXNlcyI6W3siY2xhc3MiOiJsb3ciLCJlbWFpbCI6ImFubkBleGFtcGxlLnRlc3QiLCJmcm9tIjoiMjAyNi0xMC0yM1QxMTowMDowMFoiLCJsZWFzZV9pZCI6IkwtMSIsInBlcnNvbiI6ImlkcDo3YzFmLWFubiIsInJvbGUiOiJvcGVyYXRvciIsInJvbGVzIjpbXSwidGFyZ2V0IjoicGxjLXNzaCIsInVudGlsIjoiMjAyNi0xMS0yM1QxMTowMDowMFoiLCJ1c2VybmFtZSI6ImFubiJ9XSwicG9saWN5Ijp7ImVudHJ5cG9pbnRzIjpbXSwibW9kdWxlcyI6e30sInJlbGVhc2UiOm51bGx9LCJyZXZva2VkIjpbXSwic2VyaWFsIjo3LCJ2aXNpdF9sZWFzZXMiOltdfQ==",
+     "key": "8a88e3dd7409f195fd52db2d3cba5d72ca6709bf1d94121bf3748801b40f6f5c",
+     "key_id": "34750f98bd59fcfc",
+     "signature": "2a1ba44d1def4f2a70a930ad53cdf725ded1e96ad16438df9fc5337dbbd7e52c065938455a5591e6601b2392e0bae1b756af358a2d2ce8b715ea7ed6c0165005"
+    },
+    "state": {
+     "serial": 6
+    }
+   },
+   {
+    "expected": {
+     "governed_roles": null,
+     "leases": [],
+     "ok": false,
+     "state": null,
+     "visit_leases": []
+    },
+    "name": "0025 governed roles with an unknown member",
+    "now": "2026-10-23T13:00:00Z",
+    "pins": {
+     "bundle_key": "8a88e3dd7409f195fd52db2d3cba5d72ca6709bf1d94121bf3748801b40f6f5c",
+     "edge": "edge-a",
+     "officer_key": "8139770ea87d175f56a35466c34c7ecccb8d8a91b4ee37a25df60f5b8fc9b394",
+     "release_key": null
+    },
+    "sealed": {
+     "bytes": "eyJjZWlsaW5nIjp7ImJ5dGVzIjoiZXlKamJHRnpjMlZ6SWpwYklteHZkeUlzSW1Wc1pYWmhkR1ZrSWl3aWNISnBkbWxzWldkbFpDSmRMQ0psWkdkbElqb2laV1JuWlMxaElpd2labTl5YldGMElqb2lhMk10WldSblpTMWpaV2xzYVc1bkxYWXlJaXdpYTJWNVgybGtJam9pTm1Fek9EQXpaRFZtTURVNU9UQXlZU0lzSW0xaGVGOXNaV0Z6WlY5b2IzVnljeUk2TnpJd0xDSnRZWGhmYjJabWJHbHVaVjlvYjNWeWN5STZNVElzSW5CbGNuTnZibk1pT2xzaWFXUndPamRqTVdZdFlXNXVJbDBzSW5CdmNuUnpJanBiTWpKZExDSndjbTltYVd4bElqb2lZWE56ZFhKbFpDSXNJbkpsYlc5MFpWOXlaV0ZqYUNJNkltOW1aaUlzSW5KdmJHVnpJanBiWFN3aWMyVnlhV0ZzSWpveUxDSnphV2R1WldSZllYUWlPaUl5TURJMkxURXdMVEl6VkRFd09qQXdPakF3V2lJc0luUmhjbWRsZEhNaU9sc2ljR3hqTFhOemFDSmRmUT09Iiwia2V5IjoiODEzOTc3MGVhODdkMTc1ZjU2YTM1NDY2YzM0YzdlY2NjYjhkOGE5MWI0ZWUzN2EyNWRmNjBmNWI4ZmM5YjM5NCIsImtleV9pZCI6IjZhMzgwM2Q1ZjA1OTkwMmEiLCJzaWduYXR1cmUiOiI2OTk5ZmUwOWMzMzJhZTI0MGU2MWUwZjQzMjExOTUxMmNlNGM4Y2Q0ODQ0N2JhYzc4YzEzOTU4YTI3M2Q2ODA4NDEwYzcyYmY2MjRhMWY0NGRjMmVjOWJhNzNkYzk5MzY2ZDcwMzI4NDk1NjRkMjA2Yzk0Mjk4MDJkZTRmM2QwYSJ9LCJlZGdlIjoiZWRnZS1hIiwiZm9ybWF0Ijoia2MtZWRnZS1idW5kbGUtdjMiLCJnb3Zlcm5lZF9yb2xlcyI6W3siZGlzcGxheU5hbWUiOiJvcGVyYXRvciIsIm1lbWJlcnMiOltdfV0sImhvcml6b25zIjp7ImVsZXZhdGVkIjoyNCwibG93IjoxNjgsInByaXZpbGVnZWQiOjF9LCJpc3N1ZWQiOiIyMDI2LTEwLTIzVDEyOjAwOjAwWiIsImtleV9pZCI6IjM0NzUwZjk4YmQ1OWZjZmMiLCJsZWFzZXMiOlt7ImNsYXNzIjoibG93IiwiZW1haWwiOiJhbm5AZXhhbXBsZS50ZXN0IiwiZnJvbSI6IjIwMjYtMTAtMjNUMTE6MDA6MDBaIiwibGVhc2VfaWQiOiJMLTEiLCJwZXJzb24iOiJpZHA6N2MxZi1hbm4iLCJyb2xlIjoib3BlcmF0b3IiLCJyb2xlcyI6W10sInRhcmdldCI6InBsYy1zc2giLCJ1bnRpbCI6IjIwMjYtMTEtMjNUMTE6MDA6MDBaIiwidXNlcm5hbWUiOiJhbm4ifV0sInBvbGljeSI6eyJlbnRyeXBvaW50cyI6W10sIm1vZHVsZXMiOnt9LCJyZWxlYXNlIjpudWxsfSwicmV2b2tlZCI6W10sInNlcmlhbCI6NywidmlzaXRfbGVhc2VzIjpbXX0=",
+     "key": "8a88e3dd7409f195fd52db2d3cba5d72ca6709bf1d94121bf3748801b40f6f5c",
+     "key_id": "34750f98bd59fcfc",
+     "signature": "37581ba67bc69578fc49f526f461f51598c3763d6ea76625c5f68481cc1da16062a6e778854ceecad13828c8ad8739daf9b4ab3fa57df2cf208d7e97d1027501"
+    },
+    "state": {
+     "serial": 6
+    }
+   },
+   {
+    "expected": {
+     "governed_roles": null,
+     "leases": [],
+     "ok": false,
+     "state": null,
+     "visit_leases": []
+    },
+    "name": "0025 governed roles as null",
+    "now": "2026-10-23T13:00:00Z",
+    "pins": {
+     "bundle_key": "8a88e3dd7409f195fd52db2d3cba5d72ca6709bf1d94121bf3748801b40f6f5c",
+     "edge": "edge-a",
+     "officer_key": "8139770ea87d175f56a35466c34c7ecccb8d8a91b4ee37a25df60f5b8fc9b394",
+     "release_key": null
+    },
+    "sealed": {
+     "bytes": "eyJjZWlsaW5nIjp7ImJ5dGVzIjoiZXlKamJHRnpjMlZ6SWpwYklteHZkeUlzSW1Wc1pYWmhkR1ZrSWl3aWNISnBkbWxzWldkbFpDSmRMQ0psWkdkbElqb2laV1JuWlMxaElpd2labTl5YldGMElqb2lhMk10WldSblpTMWpaV2xzYVc1bkxYWXlJaXdpYTJWNVgybGtJam9pTm1Fek9EQXpaRFZtTURVNU9UQXlZU0lzSW0xaGVGOXNaV0Z6WlY5b2IzVnljeUk2TnpJd0xDSnRZWGhmYjJabWJHbHVaVjlvYjNWeWN5STZNVElzSW5CbGNuTnZibk1pT2xzaWFXUndPamRqTVdZdFlXNXVJbDBzSW5CdmNuUnpJanBiTWpKZExDSndjbTltYVd4bElqb2lZWE56ZFhKbFpDSXNJbkpsYlc5MFpWOXlaV0ZqYUNJNkltOW1aaUlzSW5KdmJHVnpJanBiWFN3aWMyVnlhV0ZzSWpveUxDSnphV2R1WldSZllYUWlPaUl5TURJMkxURXdMVEl6VkRFd09qQXdPakF3V2lJc0luUmhjbWRsZEhNaU9sc2ljR3hqTFhOemFDSmRmUT09Iiwia2V5IjoiODEzOTc3MGVhODdkMTc1ZjU2YTM1NDY2YzM0YzdlY2NjYjhkOGE5MWI0ZWUzN2EyNWRmNjBmNWI4ZmM5YjM5NCIsImtleV9pZCI6IjZhMzgwM2Q1ZjA1OTkwMmEiLCJzaWduYXR1cmUiOiI2OTk5ZmUwOWMzMzJhZTI0MGU2MWUwZjQzMjExOTUxMmNlNGM4Y2Q0ODQ0N2JhYzc4YzEzOTU4YTI3M2Q2ODA4NDEwYzcyYmY2MjRhMWY0NGRjMmVjOWJhNzNkYzk5MzY2ZDcwMzI4NDk1NjRkMjA2Yzk0Mjk4MDJkZTRmM2QwYSJ9LCJlZGdlIjoiZWRnZS1hIiwiZm9ybWF0Ijoia2MtZWRnZS1idW5kbGUtdjMiLCJnb3Zlcm5lZF9yb2xlcyI6bnVsbCwiaG9yaXpvbnMiOnsiZWxldmF0ZWQiOjI0LCJsb3ciOjE2OCwicHJpdmlsZWdlZCI6MX0sImlzc3VlZCI6IjIwMjYtMTAtMjNUMTI6MDA6MDBaIiwia2V5X2lkIjoiMzQ3NTBmOThiZDU5ZmNmYyIsImxlYXNlcyI6W3siY2xhc3MiOiJsb3ciLCJlbWFpbCI6ImFubkBleGFtcGxlLnRlc3QiLCJmcm9tIjoiMjAyNi0xMC0yM1QxMTowMDowMFoiLCJsZWFzZV9pZCI6IkwtMSIsInBlcnNvbiI6ImlkcDo3YzFmLWFubiIsInJvbGUiOiJvcGVyYXRvciIsInJvbGVzIjpbXSwidGFyZ2V0IjoicGxjLXNzaCIsInVudGlsIjoiMjAyNi0xMS0yM1QxMTowMDowMFoiLCJ1c2VybmFtZSI6ImFubiJ9XSwicG9saWN5Ijp7ImVudHJ5cG9pbnRzIjpbXSwibW9kdWxlcyI6e30sInJlbGVhc2UiOm51bGx9LCJyZXZva2VkIjpbXSwic2VyaWFsIjo3LCJ2aXNpdF9sZWFzZXMiOltdfQ==",
+     "key": "8a88e3dd7409f195fd52db2d3cba5d72ca6709bf1d94121bf3748801b40f6f5c",
+     "key_id": "34750f98bd59fcfc",
+     "signature": "dacab9822a3ee521b7f3ef22c7f56af64dbaeaaeb17decc46e29dd7e867111fca4be7577de5d1883b556144303f75f7d603d81b278f37ee64c1400fa6c3b5400"
+    },
+    "state": {
+     "serial": 6
+    }
+   },
+   {
+    "expected": {
+     "governed_roles": null,
+     "leases": [],
+     "ok": false,
+     "state": null,
+     "visit_leases": []
+    },
+    "name": "0025 governed roles as bare names",
+    "now": "2026-10-23T13:00:00Z",
+    "pins": {
+     "bundle_key": "8a88e3dd7409f195fd52db2d3cba5d72ca6709bf1d94121bf3748801b40f6f5c",
+     "edge": "edge-a",
+     "officer_key": "8139770ea87d175f56a35466c34c7ecccb8d8a91b4ee37a25df60f5b8fc9b394",
+     "release_key": null
+    },
+    "sealed": {
+     "bytes": "eyJjZWlsaW5nIjp7ImJ5dGVzIjoiZXlKamJHRnpjMlZ6SWpwYklteHZkeUlzSW1Wc1pYWmhkR1ZrSWl3aWNISnBkbWxzWldkbFpDSmRMQ0psWkdkbElqb2laV1JuWlMxaElpd2labTl5YldGMElqb2lhMk10WldSblpTMWpaV2xzYVc1bkxYWXlJaXdpYTJWNVgybGtJam9pTm1Fek9EQXpaRFZtTURVNU9UQXlZU0lzSW0xaGVGOXNaV0Z6WlY5b2IzVnljeUk2TnpJd0xDSnRZWGhmYjJabWJHbHVaVjlvYjNWeWN5STZNVElzSW5CbGNuTnZibk1pT2xzaWFXUndPamRqTVdZdFlXNXVJbDBzSW5CdmNuUnpJanBiTWpKZExDSndjbTltYVd4bElqb2lZWE56ZFhKbFpDSXNJbkpsYlc5MFpWOXlaV0ZqYUNJNkltOW1aaUlzSW5KdmJHVnpJanBiWFN3aWMyVnlhV0ZzSWpveUxDSnphV2R1WldSZllYUWlPaUl5TURJMkxURXdMVEl6VkRFd09qQXdPakF3V2lJc0luUmhjbWRsZEhNaU9sc2ljR3hqTFhOemFDSmRmUT09Iiwia2V5IjoiODEzOTc3MGVhODdkMTc1ZjU2YTM1NDY2YzM0YzdlY2NjYjhkOGE5MWI0ZWUzN2EyNWRmNjBmNWI4ZmM5YjM5NCIsImtleV9pZCI6IjZhMzgwM2Q1ZjA1OTkwMmEiLCJzaWduYXR1cmUiOiI2OTk5ZmUwOWMzMzJhZTI0MGU2MWUwZjQzMjExOTUxMmNlNGM4Y2Q0ODQ0N2JhYzc4YzEzOTU4YTI3M2Q2ODA4NDEwYzcyYmY2MjRhMWY0NGRjMmVjOWJhNzNkYzk5MzY2ZDcwMzI4NDk1NjRkMjA2Yzk0Mjk4MDJkZTRmM2QwYSJ9LCJlZGdlIjoiZWRnZS1hIiwiZm9ybWF0Ijoia2MtZWRnZS1idW5kbGUtdjMiLCJnb3Zlcm5lZF9yb2xlcyI6WyJvcGVyYXRvciJdLCJob3Jpem9ucyI6eyJlbGV2YXRlZCI6MjQsImxvdyI6MTY4LCJwcml2aWxlZ2VkIjoxfSwiaXNzdWVkIjoiMjAyNi0xMC0yM1QxMjowMDowMFoiLCJrZXlfaWQiOiIzNDc1MGY5OGJkNTlmY2ZjIiwibGVhc2VzIjpbeyJjbGFzcyI6ImxvdyIsImVtYWlsIjoiYW5uQGV4YW1wbGUudGVzdCIsImZyb20iOiIyMDI2LTEwLTIzVDExOjAwOjAwWiIsImxlYXNlX2lkIjoiTC0xIiwicGVyc29uIjoiaWRwOjdjMWYtYW5uIiwicm9sZSI6Im9wZXJhdG9yIiwicm9sZXMiOltdLCJ0YXJnZXQiOiJwbGMtc3NoIiwidW50aWwiOiIyMDI2LTExLTIzVDExOjAwOjAwWiIsInVzZXJuYW1lIjoiYW5uIn1dLCJwb2xpY3kiOnsiZW50cnlwb2ludHMiOltdLCJtb2R1bGVzIjp7fSwicmVsZWFzZSI6bnVsbH0sInJldm9rZWQiOltdLCJzZXJpYWwiOjcsInZpc2l0X2xlYXNlcyI6W119",
+     "key": "8a88e3dd7409f195fd52db2d3cba5d72ca6709bf1d94121bf3748801b40f6f5c",
+     "key_id": "34750f98bd59fcfc",
+     "signature": "98b066dafbd46dc2e6cca33fb03e0c436a85275b0f82f7f1d22714617be20b7afc03539640c8675420f3f479223acd4fccf37fe8842b25ec1fc296fdbe356e0f"
+    },
+    "state": {
+     "serial": 6
+    }
    }
   ],
-  "note": "verify_bundle(sealed, pins, state, now); ok means no errors; leases and visit_leases are the live ids; state is what the edge stores after a bundle it accepts"
+  "note": "verify_bundle(sealed, pins, state, now); ok means no errors; leases and visit_leases are the live ids; state is what the edge stores after a bundle it accepts; governed_roles is the displayName list of an accepted bundle's governed_roles, null when the bundle has none"
  }
 }

@@ -5,8 +5,11 @@ the calls it makes. An edge is a small appliance at a site that admits people to
 of leases the desk has signed, and keeps doing so for a bounded time when the desk is out of reach.
 
 Status: version 1 of the formats named below (`kc-edge-bundle-v3`, `kc-edge-ceiling-v2`, `kc-edge-officer-v2`,
-`kc-edge-ended-v2`, `kc-unlock-v2` and the others in section 4), as shipped with KeyClerk 0.24.0. The conformance set
-in `conformance/edge.json` holds the vectors every implementation must reproduce. Words like "must" are normative.
+`kc-edge-ended-v2`, `kc-unlock-v2` and the others in section 4), as shipped with KeyClerk 0.24.0; version 1.1 adds the optional `governed_roles` member of the
+bundle (section 5), from KeyClerk 0.25.0. The conformance set
+in `conformance/edge.json` holds the vectors every implementation must reproduce. Words like "must" are normative. A verifier ignores a member of the bundle body that this version does not name, so an
+optional bundle member can be added without a new format name. Other signed objects (the ceiling, the officer's
+statements) have exactly the members named, and an extra one is refused.
 
 ## 1. Trust, pinned on site
 An edge pins three keys at installation, from people, never from the desk:
@@ -67,7 +70,8 @@ edge, serial, issued, horizons {class: hours}, revoked [visit lease ids],
 leases [{lease_id, person, username, email, key_id, public_key, target, role, class, roles, from, until, max_session_hours}],
 visit_leases [{lease_id, person, username, key_id, public_key, ssh_key, targets, role, from, until}],
 ceiling (the officer's sealed kc-edge-ceiling-v2, exactly as sealed) | null,
-policy {modules {edge, ceiling: {sha256}}, release (sealed manifest) | null, entrypoints}
+policy {modules {edge, ceiling: {sha256}}, release (sealed manifest) | null, entrypoints},
+governed_roles [{displayName, externalId?}] (optional, version 1.1)
 ```
 
 The newest bundle is complete: anything the edge holds that is not in it has ended. A verifier refuses: a wrong
@@ -83,6 +87,16 @@ than `min(horizon of its class, ceiling.max_offline_hours)`. A lease of a class 
 visit lease lives in its own window, passes the ceiling policy too
 (kind visit: its window within `ceiling.max_offline_hours`, and an edge assured by its ceiling and its own
 attestation), and is not revoked. A lost answer: `GET /api/v1/edge/bundle?serial=N` returns the same bundle.
+
+Governed roles (version 1.1): `governed_roles`, when present, lists the edge roles KeyClerk governs on this edge as
+SCIM 2.0 Group shapes (RFC 7643 section 4.2), `[{displayName, externalId?}]`, each role once: the roles the edge's
+enrolled targets map to. It shares the bundle's signature and serial floor, so a replayed bundle cannot shrink it.
+Absent means no catalogue: the edge uses its own list of governed roles and never reads the absence as "none
+governed". Present and empty means none governed here. A holder of a governed role without a live lease or visit
+lease for it is drift, which the edge reports and never removes. A verifier must refuse the bundle when
+`governed_roles` is present but is not a list of objects with a non-empty string `displayName`, an optional string
+`externalId` and no other member, or names a role twice; null is refused, never read as absent. An edge that does
+not implement version 1.1 ignores the member.
 
 Acting on it: a role assignment per live lease (`username`, `role`, `until`); sessions approved only for a live lease
 or visit lease of that person and target (the `admit` policy), ended at `max_session_hours` and at lease end; visit

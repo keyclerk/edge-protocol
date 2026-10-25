@@ -30,8 +30,11 @@ says whether an edge gets it right:
   conforms when it gives every recorded verdict.
 
 ## Status
-Version 1 of the formats, as KeyClerk 0.24.0 ships them. A format changes only under a new name (`-v4` after `-v3`),
-so an edge that verifies `kc-edge-bundle-v3` keeps working until it chooses to move. The KeyClerk engine itself will
+Version 1.1 of the protocol: the formats of version 1, as KeyClerk 0.24.0 ships them, plus the optional
+`governed_roles` member of the bundle, from KeyClerk 0.25.0. What changes break is a new format name (`-v4` after
+`-v3`), so an edge that verifies `kc-edge-bundle-v3` keeps working until it chooses to move. An optional member added
+to the bundle keeps its name and raises the minor version; an edge that does not know a bundle member ignores it. Changes are
+listed in [CHANGELOG.md](CHANGELOG.md). The KeyClerk engine itself will
 be published as open source later under the same licence; until then this repository is the reference for edge
 builders.
 

@@ -4,16 +4,17 @@ files:
   .github/workflows/ci.yml  sha256 5c5c4a796594c08ba74768ade8f4302bab2ad293ef5aa53b9f2f5e2cc98f06ac
   .github/workflows/release.yml  sha256 73764f7c968d1a2fe5a112c8334ed5d2a6fbea87d0be26762d57a1ee63b21e01
   .github/workflows/scorecard.yml  sha256 59d5de3fdc40af3fb7ae35c608ee31658556f902894acacdbe71c46406208340
+  CHANGELOG.md  sha256 29f289b47789206a6a1bc891d9f91fd7ee56355a477e63e9f69481cba0759ae7
   CONTRIBUTING.md  sha256 59ed04ab76cda10b20302c32a237ab7305cb1ccc5eb482d1cad5979e2bac01ce
   LICENSE  sha256 57fb42fbcd0b037ce528ed8f72f1ec095d67bc6825ecf1448ff39be1fe68a4b4
   LICENSES/EUPL-1.2.txt  sha256 57fb42fbcd0b037ce528ed8f72f1ec095d67bc6825ecf1448ff39be1fe68a4b4
   NOTICE  sha256 4b0639b8f675242eb30284552f31497a7010cf3e49c954bb24d6b7fbae43a660
-  README.md  sha256 cc6f57a1cb8853e9fdf9f2fa2e11fc63ac16292fa0261337338ed5a69bf304c1
+  README.md  sha256 7173b3dc4865ca94ad99aa8b41b84eaddfad149df47ff2c2fc3da0c149e195da
   REUSE.toml  sha256 14fd4feb0a478b74bb333c46c59a8076412fc09785fd72b8691d3910e5c74b8f
   SECURITY.md  sha256 22351ff898b2c26a7c00dc08efbe55903bd0429f38e373020434527521329207
   brand/keyclerk-lockup-dark.svg  sha256 b331efe48301086d5b9bc1ad378d1c82b49dcf78c4f58fad55bd178a19738133
   brand/keyclerk-lockup-light.svg  sha256 ad0bc0750e72ed3e3ae229a3a63e974cffea4ba36d1e4281ddc89ef11c3028d6
   brand/keyclerk-social.png  sha256 ab2a9e76be72238a16672e83686db5ce6abf787e6c2378c0679781ec68ef8d67
-  conformance/edge.json  sha256 bcd058036a2b72b1a9a78cbd98842a0b28de514ebd2b6e46d675c167cb8ba4eb
-  edge-protocol.md  sha256 2f6b2de53548111e0568663bd5bfc8e7f688e917be97438069c9fda3c16e6c49
+  conformance/edge.json  sha256 c95252bb7db72d3539eedb0e8588ef1dc3f4a5358495531dde95e1ff50fb8282
+  edge-protocol.md  sha256 4a21b5d8e33d2dde1321c961d001714d890e3a28cd4203ffc53879f71250cda1
   tools/check.py  sha256 cf2e8c998d4dfbf4b9256a9031dce29e9c66f14cd0e379e85f733cf65d188e2a
