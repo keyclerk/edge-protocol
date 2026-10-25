@@ -1,8 +1,14 @@
 # Changelog
 
-## Unreleased
+## 1.2.0 (2026-10-25)
+- Protocol 1.2: an edge may wait for its next bundle, `GET /api/v1/edge/bundle?after=<serial>&wait=<seconds>`
+  (section 5): answered when the edge's bundle content changes or when the wait ends, always with a fresh bundle;
+  at most 55 seconds, one open wait per node, a cap per desk. Without `wait` a pull is unchanged. Built from KeyClerk
+  0.25.0.
+- Conformance: a `requests` family for signed requests (section 3): the exact bytes an edge signs, the query signed
+  as sent, and a changed query, reordered parameters, a changed body, another key and a skewed clock refused.
 - Repository: `tools/envelope.py`, a reference reader for section 4, checked against the conformance set and fuzzed
-  with Atheris under ClusterFuzzLite. No change to the protocol or the vectors.
+  with Atheris under ClusterFuzzLite.
 - Repository: ruff in CI, the test policy in CONTRIBUTING.md, and release notes taken from this changelog.
 
 ## 1.1.0 (2026-10-25)

@@ -779,6 +779,139 @@
   "edge": "9f157308ebfc9cd140f6f1fd71ab558082af52cbbe77df97c891f036d2ba3a05"
  },
  "note": "evaluate each input against the module named; the result must equal expected (sets as sorted lists)",
+ "requests": {
+  "cases": [
+   {
+    "body": "",
+    "edge": "edge-a",
+    "expected": {
+     "message": "a2MtZWRnZS1yZXF1ZXN0LXYyCmVkZ2UtYQpHRVQKL2FwaS92MS9lZGdlL2J1bmRsZQoxNzkzMTAyNDAwCmJtOXVZMlV0YjJZdGRHaGxMV05oYzJVCmUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTU=",
+     "ok": true
+    },
+    "header": "edge-a;1793102400;bm9uY2Utb2YtdGhlLWNhc2U;19663f68d0cacbac2229c1a55723cf3db1279f5ebf7947292d345b9eae5781a02240d185c7bfd3031f2caa7053996d2c8bf184950cd29a4f1a1e5370963d4b0d",
+    "method": "GET",
+    "name": "a plain pull",
+    "nonce": "bm9uY2Utb2YtdGhlLWNhc2U",
+    "now": 1793102400,
+    "path": "/api/v1/edge/bundle",
+    "public_key": "ea4a6c63e29c520abef5507b132ec5f9954776aebebe7b92421eea691446d22c",
+    "seconds": 1793102400
+   },
+   {
+    "body": "",
+    "edge": "edge-a",
+    "expected": {
+     "message": "a2MtZWRnZS1yZXF1ZXN0LXYyCmVkZ2UtYQpHRVQKL2FwaS92MS9lZGdlL2J1bmRsZT9hZnRlcj03JndhaXQ9NTUKMTc5MzEwMjQwMApibTl1WTJVdGIyWXRkR2hsTFdOaGMyVQplM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1",
+     "ok": true
+    },
+    "header": "edge-a;1793102400;bm9uY2Utb2YtdGhlLWNhc2U;6c8dfcd9480bd384be42f9bbde538cb4bcbcf95486c8d6f003aa3919198ba1c8d008694dca5ca66013f66d3167f659a0d844e3c4cbd361e5519454957fb26204",
+    "method": "GET",
+    "name": "a long-poll: after and wait are in the signed path",
+    "nonce": "bm9uY2Utb2YtdGhlLWNhc2U",
+    "now": 1793102400,
+    "path": "/api/v1/edge/bundle?after=7&wait=55",
+    "public_key": "ea4a6c63e29c520abef5507b132ec5f9954776aebebe7b92421eea691446d22c",
+    "seconds": 1793102400
+   },
+   {
+    "body": "",
+    "edge": "edge-a",
+    "expected": {
+     "message": "a2MtZWRnZS1yZXF1ZXN0LXYyCmVkZ2UtYQpHRVQKL2FwaS92MS9lZGdlL2J1bmRsZT9hZnRlcj03JndhaXQ9NTUKMTc5MzEwMjQwMApibTl1WTJVdGIyWXRkR2hsTFdOaGMyVQplM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1",
+     "ok": false
+    },
+    "header": "edge-a;1793102400;bm9uY2Utb2YtdGhlLWNhc2U;d1a4339ceb90b35c0ba02088879115c161ca0b57cf555a24bb06f43c76c0a6a0c0a536c0b1ce3f92ec31a5221f81f6d96ca9720a85b710a4f425b0a83f929e07",
+    "method": "GET",
+    "name": "the wait changed after signing",
+    "nonce": "bm9uY2Utb2YtdGhlLWNhc2U",
+    "now": 1793102400,
+    "path": "/api/v1/edge/bundle?after=7&wait=55",
+    "public_key": "ea4a6c63e29c520abef5507b132ec5f9954776aebebe7b92421eea691446d22c",
+    "seconds": 1793102400
+   },
+   {
+    "body": "",
+    "edge": "edge-a",
+    "expected": {
+     "message": "a2MtZWRnZS1yZXF1ZXN0LXYyCmVkZ2UtYQpHRVQKL2FwaS92MS9lZGdlL2J1bmRsZT93YWl0PTU1JmFmdGVyPTcKMTc5MzEwMjQwMApibTl1WTJVdGIyWXRkR2hsTFdOaGMyVQplM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1",
+     "ok": false
+    },
+    "header": "edge-a;1793102400;bm9uY2Utb2YtdGhlLWNhc2U;6c8dfcd9480bd384be42f9bbde538cb4bcbcf95486c8d6f003aa3919198ba1c8d008694dca5ca66013f66d3167f659a0d844e3c4cbd361e5519454957fb26204",
+    "method": "GET",
+    "name": "the parameters reordered after signing",
+    "nonce": "bm9uY2Utb2YtdGhlLWNhc2U",
+    "now": 1793102400,
+    "path": "/api/v1/edge/bundle?wait=55&after=7",
+    "public_key": "ea4a6c63e29c520abef5507b132ec5f9954776aebebe7b92421eea691446d22c",
+    "seconds": 1793102400
+   },
+   {
+    "body": "eyJhcHBsaWVkIjpbXX0=",
+    "edge": "edge-a",
+    "expected": {
+     "message": "a2MtZWRnZS1yZXF1ZXN0LXYyCmVkZ2UtYQpQT1NUCi9hcGkvdjEvZWRnZS9yZXBvcnQKMTc5MzEwMjQwMApibTl1WTJVdGIyWXRkR2hsTFdOaGMyVQowNTJhNmIwNjQ0NGQwNzE3MjhkNzE4NWQ4NTc3MjI1Y2I0ZjhjYWFkMTBiNzBkYmM3NDY3OGIwMGEyZjZmYWYx",
+     "ok": true
+    },
+    "header": "edge-a;1793102400;bm9uY2Utb2YtdGhlLWNhc2U;84bc75355f797ed68aa36f5c2ec6de452d9b1ac7d5e1220a2146d561ae47083e81ccf621024ec1ac035a0fbd2385fbb21c060274fe56190776c7955edbe5ef0d",
+    "method": "POST",
+    "name": "a report with a body",
+    "nonce": "bm9uY2Utb2YtdGhlLWNhc2U",
+    "now": 1793102400,
+    "path": "/api/v1/edge/report",
+    "public_key": "ea4a6c63e29c520abef5507b132ec5f9954776aebebe7b92421eea691446d22c",
+    "seconds": 1793102400
+   },
+   {
+    "body": "eyJhcHBsaWVkIjpbMV19",
+    "edge": "edge-a",
+    "expected": {
+     "message": "a2MtZWRnZS1yZXF1ZXN0LXYyCmVkZ2UtYQpQT1NUCi9hcGkvdjEvZWRnZS9yZXBvcnQKMTc5MzEwMjQwMApibTl1WTJVdGIyWXRkR2hsTFdOaGMyVQpkMjQ3NDQwYTI1ZTg2YmFlYWE0YjMxYzllOTVkZWMxNzc2ZjJlNWY1NGIzMTk3MDBjYmFjMjkzNTkxNDEwMmIx",
+     "ok": false
+    },
+    "header": "edge-a;1793102400;bm9uY2Utb2YtdGhlLWNhc2U;84bc75355f797ed68aa36f5c2ec6de452d9b1ac7d5e1220a2146d561ae47083e81ccf621024ec1ac035a0fbd2385fbb21c060274fe56190776c7955edbe5ef0d",
+    "method": "POST",
+    "name": "the body changed after signing",
+    "nonce": "bm9uY2Utb2YtdGhlLWNhc2U",
+    "now": 1793102400,
+    "path": "/api/v1/edge/report",
+    "public_key": "ea4a6c63e29c520abef5507b132ec5f9954776aebebe7b92421eea691446d22c",
+    "seconds": 1793102400
+   },
+   {
+    "body": "",
+    "edge": "edge-a",
+    "expected": {
+     "message": "a2MtZWRnZS1yZXF1ZXN0LXYyCmVkZ2UtYQpHRVQKL2FwaS92MS9lZGdlL2J1bmRsZQoxNzkzMTAyNDAwCmJtOXVZMlV0YjJZdGRHaGxMV05oYzJVCmUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTU=",
+     "ok": false
+    },
+    "header": "edge-a;1793102400;bm9uY2Utb2YtdGhlLWNhc2U;ea6a688bd855553e6dacc29e928fcd8163a6e8d5bba7b42e9765887bbe8ee04745027a2cbd6b5e2d59282adec9c3ab17e4304e809962e89beca281a59a1b9b0f",
+    "method": "GET",
+    "name": "signed by another key",
+    "nonce": "bm9uY2Utb2YtdGhlLWNhc2U",
+    "now": 1793102400,
+    "path": "/api/v1/edge/bundle",
+    "public_key": "ea4a6c63e29c520abef5507b132ec5f9954776aebebe7b92421eea691446d22c",
+    "seconds": 1793102400
+   },
+   {
+    "body": "",
+    "edge": "edge-a",
+    "expected": {
+     "message": "a2MtZWRnZS1yZXF1ZXN0LXYyCmVkZ2UtYQpHRVQKL2FwaS92MS9lZGdlL2J1bmRsZQoxNzkzMTAyNDAwCmJtOXVZMlV0YjJZdGRHaGxMV05oYzJVCmUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTU=",
+     "ok": false
+    },
+    "header": "edge-a;1793102400;bm9uY2Utb2YtdGhlLWNhc2U;19663f68d0cacbac2229c1a55723cf3db1279f5ebf7947292d345b9eae5781a02240d185c7bfd3031f2caa7053996d2c8bf184950cd29a4f1a1e5370963d4b0d",
+    "method": "GET",
+    "name": "the clock more than five minutes off",
+    "nonce": "bm9uY2Utb2YtdGhlLWNhc2U",
+    "now": 1793102701,
+    "path": "/api/v1/edge/bundle",
+    "public_key": "ea4a6c63e29c520abef5507b132ec5f9954776aebebe7b92421eea691446d22c",
+    "seconds": 1793102400
+   }
+  ],
+  "note": "kc-edge-request-v2 (section 3): message is the bytes the edge signs, base64; ok is the desk's check of the header against the request as received (method, path with its query, body), the pinned key and the moment now (unix seconds); the query is signed exactly as sent"
+ },
  "statements": {
   "cases": [
    {
