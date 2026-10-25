@@ -2,7 +2,7 @@ profile: edge-protocol
 KeyClerk: 0.24.1
 files:
   .github/dependabot.yml  sha256 f25bc427a048e521aa254784146d2108603c58dd6beec369166fef195c3b48e1
-  .github/workflows/ci.yml  sha256 261a13517c90a2f7c7c140d9a9350f969abdfa4ee0a430d4112cd6feeb13c9c8
+  .github/workflows/ci.yml  sha256 eb6be3d4a7ae175d587178651370cd0aeca6a316b4676967d754de344a871012
   .github/workflows/release.yml  sha256 73764f7c968d1a2fe5a112c8334ed5d2a6fbea87d0be26762d57a1ee63b21e01
   .github/workflows/scorecard.yml  sha256 59d5de3fdc40af3fb7ae35c608ee31658556f902894acacdbe71c46406208340
   CHANGELOG.md  sha256 29f289b47789206a6a1bc891d9f91fd7ee56355a477e63e9f69481cba0759ae7

@@ -19,5 +19,5 @@ jobs:
         run: python3 tools/check.py
       - name: Licensing (REUSE)
         run: |
-          python3 -m pip install --quiet --user --require-hashes --only-binary=:all: -r tools/requirements-ci.txt
+          python3 -m pip install --quiet --user --require-hashes -r tools/requirements-ci.txt
           python3 -m reuse lint
