@@ -1,22 +1,28 @@
 profile: edge-protocol
 KeyClerk: 0.24.1
 files:
+  .clusterfuzzlite/Dockerfile  sha256 ed07bd08d153db12adc2ace9d881b915d1aeef7125fd6ce3b0a5e3f26f653c53
+  .clusterfuzzlite/build.sh  sha256 a789d6632c92ec3d545365e629ef71395f80998851798b259d6e133e8dd4b3f0
+  .clusterfuzzlite/project.yaml  sha256 b34979ef2c9a5738ebdda04c4e726143f50026e068a13ac2cefb1700144f050f
   .github/dependabot.yml  sha256 f25bc427a048e521aa254784146d2108603c58dd6beec369166fef195c3b48e1
+  .github/workflows/cflite.yml  sha256 0eec5e1bd047ed024a3588836dcffa48736194293486ddc37517610ed624e12d
   .github/workflows/ci.yml  sha256 eb6be3d4a7ae175d587178651370cd0aeca6a316b4676967d754de344a871012
   .github/workflows/release.yml  sha256 73764f7c968d1a2fe5a112c8334ed5d2a6fbea87d0be26762d57a1ee63b21e01
   .github/workflows/scorecard.yml  sha256 59d5de3fdc40af3fb7ae35c608ee31658556f902894acacdbe71c46406208340
-  CHANGELOG.md  sha256 29f289b47789206a6a1bc891d9f91fd7ee56355a477e63e9f69481cba0759ae7
+  CHANGELOG.md  sha256 fec59eba910ba23a6871fa653aecba52a1d9db549ffc31638592cfe52b7f5c79
   CONTRIBUTING.md  sha256 59ed04ab76cda10b20302c32a237ab7305cb1ccc5eb482d1cad5979e2bac01ce
   LICENSE  sha256 57fb42fbcd0b037ce528ed8f72f1ec095d67bc6825ecf1448ff39be1fe68a4b4
   LICENSES/EUPL-1.2.txt  sha256 57fb42fbcd0b037ce528ed8f72f1ec095d67bc6825ecf1448ff39be1fe68a4b4
   NOTICE  sha256 4b0639b8f675242eb30284552f31497a7010cf3e49c954bb24d6b7fbae43a660
-  README.md  sha256 7173b3dc4865ca94ad99aa8b41b84eaddfad149df47ff2c2fc3da0c149e195da
-  REUSE.toml  sha256 14fd4feb0a478b74bb333c46c59a8076412fc09785fd72b8691d3910e5c74b8f
+  README.md  sha256 36384277fad4ba93900648506b98ef177a79bcfcd8556017819a3b9cf87fbbcb
+  REUSE.toml  sha256 634f8f6a60c9191c384411b8801310d9dfb19cb6c4a4c34312c9d0deae73f76f
   SECURITY.md  sha256 0a2ad5793f451c3d6ecf101353132466dd35e3607cd3b1725369c0a480d8ae2e
   brand/keyclerk-lockup-dark.svg  sha256 b331efe48301086d5b9bc1ad378d1c82b49dcf78c4f58fad55bd178a19738133
   brand/keyclerk-lockup-light.svg  sha256 ad0bc0750e72ed3e3ae229a3a63e974cffea4ba36d1e4281ddc89ef11c3028d6
   brand/keyclerk-social.png  sha256 ab2a9e76be72238a16672e83686db5ce6abf787e6c2378c0679781ec68ef8d67
   conformance/edge.json  sha256 c95252bb7db72d3539eedb0e8588ef1dc3f4a5358495531dde95e1ff50fb8282
   edge-protocol.md  sha256 4a21b5d8e33d2dde1321c961d001714d890e3a28cd4203ffc53879f71250cda1
-  tools/check.py  sha256 cf2e8c998d4dfbf4b9256a9031dce29e9c66f14cd0e379e85f733cf65d188e2a
+  tools/check.py  sha256 f0de9e8fc1a1b3a6436f8bad1d08e968c5abf542db4553ab45f84e9030a1e3ad
+  tools/envelope.py  sha256 b5f2ad3a3b915ef09876e1c69ea588bd4ad88177e5a3003b16b47c4a8de6d311
+  tools/fuzz_envelope.py  sha256 960f6e5a8b468fcd08d94c7d9a24817dcb53341f244e8e33e293e1025756ac7c
   tools/requirements-ci.txt  sha256 07af6a902ff64f10a7b1d239731c7bab893cb4b8c97f8760df07be30a6e3eca2
