@@ -28,6 +28,9 @@ says whether an edge gets it right:
 - [`conformance/edge.json`](conformance/edge.json): fixed vectors for the bundle verifier, officer statements,
   ceilings, ended notices, phoned-unlock codes, policy modules by hash, and the edge policy itself. An implementation
   conforms when it gives every recorded verdict.
+- [`tools/envelope.py`](tools/envelope.py): a reference reader for section 4 (the sealed object, canonical base64 and
+  canonical JSON), standard library only, checked against the conformance set by `tools/check.py` and fuzzed with
+  Atheris under ClusterFuzzLite (`tools/fuzz_envelope.py`, on every pull request and weekly).
 
 ## Status
 Version 1.1 of the protocol: the formats of version 1, as KeyClerk 0.24.0 ships them, plus the optional

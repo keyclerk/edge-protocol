@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+- Repository: `tools/envelope.py`, a reference reader for section 4, checked against the conformance set and fuzzed
+  with Atheris under ClusterFuzzLite. No change to the protocol or the vectors.
+
 ## 1.1.0 (2026-10-25)
 - The bundle may carry `governed_roles`, the edge roles KeyClerk governs on this edge, as SCIM 2.0 Group shapes
   `[{displayName, externalId?}]` (section 5). An edge can now tell a role KeyClerk governs from one it does not, and

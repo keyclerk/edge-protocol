@@ -1,7 +1,7 @@
 version = 1
 
 [[annotations]]
-path = ["**/*.md", "NOTICE", "RELEASE.txt", "conformance/**", "brand/**", ".github/**", "tools/**", "LICENSE"]
+path = ["**/*.md", "NOTICE", "RELEASE.txt", "conformance/**", "brand/**", ".github/**", "tools/**", ".clusterfuzzlite/**", "LICENSE"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 VDHome and the KeyClerk contributors"
 SPDX-License-Identifier = "EUPL-1.2"
