@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.2.1 (2026-10-25)
+- References: every standard the specification builds on, normative and informative, each with a link, cited where
+  it is first named (Ed25519, X25519, P-256, ECDH, HKDF, HMAC, SHA-256, base32 and base64, AES-256-GCM, JSON, SCIM,
+  SEC 1, TPM 2.0 and tpm2-tools, WebAssembly and OPA, WebAuthn, Keycloak); `tools/check.py` enforces it.
+- Clarified, as the reference implementation and the vectors already do: the phoned-unlock secret is 32 bytes of
+  HKDF output, and its code uses the RFC 4648 base32 alphabet in upper case.
+
 ## 1.2.0 (2026-10-25)
 - Protocol 1.2: an edge may wait for its next bundle, `GET /api/v1/edge/bundle?after=<serial>&wait=<seconds>`
   (section 5): answered when the edge's bundle content changes or when the wait ends, always with a fresh bundle;

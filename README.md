@@ -14,7 +14,7 @@
 
 # The KeyClerk edge protocol
 
-KeyClerk is an access-governance engine for Keycloak: people get access for a time, through signed approvals, and it
+KeyClerk is an access-governance engine for [Keycloak](https://www.keycloak.org/): people get access for a time, through signed approvals, and it
 ends by itself; every change is a signed record anyone can check. An **edge** is the small appliance at a site that
 admits people to the systems behind it on the strength of leases KeyClerk has signed, and keeps working for a bounded
 time when KeyClerk is out of reach.

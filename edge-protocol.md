@@ -1,6 +1,6 @@
 # The KeyClerk edge protocol
 
-How an edge agent works with a KeyClerk desk: the trust it pins, the requests it signs, the bundles it verifies and
+How an edge agent works with a KeyClerk [KEYCLERK] desk (KeyClerk governs access in Keycloak [KEYCLOAK]): the trust it pins, the requests it signs, the bundles it verifies and
 the calls it makes. An edge is a small appliance at a site that admits people to systems behind it on the strength
 of leases the desk has signed, and keeps doing so for a bounded time when the desk is out of reach.
 
@@ -24,7 +24,8 @@ The edge also keeps its own floors: the highest bundle serial applied, the newes
 ceiling serial held. Losing them means reinstalling, never resetting.
 
 ## 2. Enrolment
-1. The edge makes its Ed25519 enrolment key and a P-256 key for phoned unlock, inside its TPM where it has one.
+1. The edge makes its Ed25519 [RFC8032] enrolment key and a P-256 [SP800-186] key for phoned unlock, inside its TPM
+   [TPM2] where it has one.
 2. The officer and the edge sign one statement over the same bytes: a multi-signed `kc-edge-officer-v2` with purpose
    `enrolment`, naming the edge, the officer, the officer's key and each node as `{enrolment_key, unlock_key, tpm}`
    (the TPM commitment of section 12, or null). One node, or two for a high-availability edge.
@@ -44,12 +45,12 @@ signature of the enrolment key over
 kc-edge-request-v2 \n <edge> \n <METHOD> \n <path with query> \n <seconds> \n <nonce> \n <sha256(body) hex>
 ```
 
-Clock skew at most 5 minutes; a nonce (16 to 64 base64url characters) is accepted once. No session, cookie or token is
+Clock skew at most 5 minutes; a nonce (16 to 64 base64url characters [RFC4648]) is accepted once. No session, cookie or token is
 ever accepted on these routes.
 
 ## 4. Signed objects
 One signing mode: every signature is over exact bytes, and no verifier ever serialises a document to check a
-signature. Two shapes:
+signature. Two shapes, both JSON [RFC8259]:
 - **sealed** `{"bytes": base64(canonical JSON), "signature": hex, "key": hex, "key_id": hex16}`, exactly these members;
   the object inside names its `format` and the signer's `key_id`. Formats: `kc-edge-bundle-v3`, `kc-edge-ceiling-v2`
   (sealed by the officer), `kc-edge-ended-v2`, `kc-edge-carried-v1`, `kc-edge-key-rollover-v1`,
@@ -57,7 +58,8 @@ signature. Two shapes:
 - **multi-signed** `{"bytes": ..., "signatures": [{"key", "key_id", "signature"}]}`: signed by exactly the keys named
   (each once, no other); the object inside names its `format`. Format: `kc-edge-officer-v2`.
 
-Canonical JSON: sorted keys, no spaces, UTF-8, integers 0 to 2^53-1 and strings only (no floats). Base64 is canonical
+Canonical JSON [RFC8259]: sorted keys, no spaces, UTF-8, integers 0 to 2^53-1 and strings only (no floats). It is
+not JCS [RFC8785], which formats numbers and orders keys differently. Base64 [RFC4648] is canonical
 (no stray padding or trailing bits), signatures are 128 lower-case hex. Verify each signature over the decoded bytes,
 then parse, re-encode and compare with the bytes (a non-canonical body is refused even when signed), then check
 `format` and `key_id`. The re-encoding check guards the parse, never the signature.
@@ -99,7 +101,7 @@ malformed `wait`, are refused. Without `wait`, a pull is as in version 1.1; an o
 plain pull. After an immediate answer an edge waits its normal pull interval before waiting again.
 
 Governed roles (version 1.1): `governed_roles`, when present, lists the edge roles KeyClerk governs on this edge as
-SCIM 2.0 Group shapes (RFC 7643 section 4.2), `[{displayName, externalId?}]`, each role once: the roles the edge's
+SCIM 2.0 Group shapes ([RFC7643] section 4.2), `[{displayName, externalId?}]`, each role once: the roles the edge's
 enrolled targets map to. It shares the bundle's signature and serial floor, so a replayed bundle cannot shrink it.
 Absent means no catalogue: the edge uses its own list of governed roles and never reads the absence as "none
 governed". Present and empty means none governed here. A holder of a governed role without a live lease or visit
@@ -117,7 +119,7 @@ leases only, on the edges where that person holds one.
 ## 6. Policy in the edge
 `edge.wasm` (entrypoints `keyclerk/edge/settings`, `admit`, `visit_window`, `attestation`) and `ceiling.wasm`
 (`keyclerk/ceiling/decision`) are named in the bundle by hash and fetched by hash; evaluate them in process (any
-WebAssembly runtime that runs OPA's compiled policies). `settings` gives the horizons, `visit_max_hours`,
+WebAssembly [WASM] runtime that runs OPA's compiled policies [OPA-WASM]). `settings` gives the horizons, `visit_max_hours`,
 `local_window_hours` and `session_max_hours`. Run `conformance/edge.json` against the modules you load.
 
 ## 7. Calls an edge makes
@@ -133,10 +135,10 @@ WebAssembly runtime that runs OPA's compiled policies). `settings` gives the hor
 | `GET /edge/evidence` | | sealed head |
 
 ## 8. Envelopes to people
-`kc-relay-v1`: `{format, epk, nonce, ct, context}`: X25519 with a fresh key, HKDF-SHA256 (salt `epk || recipient`,
-info `kc-relay-v1|` + context), AES-256-GCM with the context as associated data. The recipient key is the lease's
+`kc-relay-v1`: `{format, epk, nonce, ct, context}`: X25519 [RFC7748] with a fresh key, HKDF-SHA256 [RFC5869] (salt
+`epk || recipient`, info `kc-relay-v1|` + context), AES-256-GCM [SP800-38D] with the context as associated data. The recipient key is the lease's
 `public_key`. People take it in the desk after a fresh sign-in and open it in the browser with the key their passkey
-derives; nothing is deleted until they confirm.
+derives (the WebAuthn PRF extension [WEBAUTHN]); nothing is deleted until they confirm.
 
 ## 9. Carried visit leases
 A person with a visit lease takes a carried lease from the desk after a fresh sign-in: a sealed `kc-edge-carried-v1`
@@ -149,12 +151,14 @@ the SSH key with a signature over a challenge.
 Each node of an edge has a P-256 `unlock_key`, inside its TPM where it has one (TPMs offer P-256, not Curve25519),
 named in the statement the officer and the edge sign; the desk's root names the people who may approve an unlock. The
 node pins the desk's `unlock_key` from `GET /edge-key` (`unlock_format: kc-unlock-v2`). Keys travel as the uncompressed
-SEC1 point (65 bytes, `04 x y`), base64url without padding. Both sides compute
+SEC1 point [SEC1] (65 bytes, `04 x y`), base64url without padding [RFC4648]. Both sides compute, with ECDH [SP800-56A], HKDF [RFC5869] and HMAC
+[RFC2104]:
 
 ```
 z      = ECDH-P256(own private, other public)      (on a TPM: TPM2_ECDH_ZGen; z is the x coordinate)
-secret = HKDF-SHA256(z, salt none, info "kc-unlock-v2|" edge "|" node "|" desk_unlock_key "|" node_unlock_key)
+secret = HKDF-SHA256(z, salt none, info "kc-unlock-v2|" edge "|" node "|" desk_unlock_key "|" node_unlock_key), 32 bytes
 code   = base32(HMAC-SHA256(secret, "kc-unlock-v2|edge|node|person|fingerprint|target|nonce|minutes"))[:10]
+         (base32: the RFC 4648 alphabet, upper case; the first 10 characters)
 ```
 
 where `node` is the key id of the node's enrolment key; no field holds a `|` or a line break. Nothing secret crosses
@@ -183,11 +187,11 @@ An assured edge proves three things; until it has, it gets what a basic edge get
   officer and the edge sign the enrolment statement with the commitment in it: `tpm: {ek_sha256, ak_name, pcr_baseline}`.
 - **Activation.** `GET /edge/attest/challenge` checks the EK (the officer's pin, and where there is a certificate its
   chain to the deployment's EK roots) and answers `{credential, id_object, encrypted_secret, expires_at}`:
-  TPM2_MakeCredential to the EK for the AK's name, framed as `tpm2_activatecredential -i` reads it. The edge recovers
+  TPM2_MakeCredential to the EK for the AK's name, framed as `tpm2_activatecredential -i` [TPM2-TOOLS] reads it. The edge recovers
   the secret with TPM2_ActivateCredential and sends `POST /edge/attest/activate {secret: base64}` within 10 minutes. A
   wrong answer burns the challenge and raises an attestation incident.
 - **Every pull.** `GET /edge/bundle` carries `KeyClerk-Quote: base64(message).base64(signature).base64(values)`, as
-  `tpm2_quote -m -s -o -F values` writes them, over the SHA-256 PCR bank, with the qualifying data
+  `tpm2_quote -m -s -o -F values` writes them, over the SHA-256 [FIPS180-4] PCR bank, with the qualifying data
   `sha256("kc-edge-quote-v1|<edge>|<seconds>|<nonce>")` from the same request's `KeyClerk-Edge` header. The policy
   (`attestation`, default PCR 7) compares the quoted PCRs with the baseline the officer signed. A changed PCR, a stale
   quote or no quote: the bundle is a basic edge's, and an attestation incident is raised once per new reason.
@@ -196,3 +200,46 @@ An assured edge proves three things; until it has, it gets what a basic edge get
 `conformance/edge.json`: the policy cases, the bundle verifier, and the families `statements` (multi-signed),
 `ceilings` (sealed), `ended`, `unlock` (both sides reach one code, or both refuse) and `module_bytes`. Keys in it are
 fixed test seeds; never use them for anything else. An implementation conforms when it gives every recorded verdict.
+
+## References
+
+### Normative
+- [FIPS180-4] NIST, *Secure Hash Standard (SHS)*, FIPS 180-4: SHA-256. <https://doi.org/10.6028/NIST.FIPS.180-4>
+- [OPA-WASM] Open Policy Agent, *WebAssembly*: the ABI of compiled policies an edge loads.
+  <https://www.openpolicyagent.org/docs/latest/wasm/>
+- [RFC2104] H. Krawczyk, M. Bellare, R. Canetti, *HMAC: Keyed-Hashing for Message Authentication*.
+  <https://www.rfc-editor.org/rfc/rfc2104>
+- [RFC4648] S. Josefsson, *The Base16, Base32, and Base64 Data Encodings*: base64, base64url without padding (section 5),
+  base32 (section 6). <https://www.rfc-editor.org/rfc/rfc4648>
+- [RFC5869] H. Krawczyk, P. Eronen, *HMAC-based Extract-and-Expand Key Derivation Function (HKDF)*.
+  <https://www.rfc-editor.org/rfc/rfc5869>
+- [RFC7643] P. Hunt et al., *System for Cross-domain Identity Management: Core Schema*: the Group resource (section 4.2).
+  <https://www.rfc-editor.org/rfc/rfc7643>
+- [RFC7748] A. Langley, M. Hamburg, S. Turner, *Elliptic Curves for Security*: X25519.
+  <https://www.rfc-editor.org/rfc/rfc7748>
+- [RFC8032] S. Josefsson, I. Liusvaara, *Edwards-Curve Digital Signature Algorithm (EdDSA)*: Ed25519.
+  <https://www.rfc-editor.org/rfc/rfc8032>
+- [RFC8259] T. Bray, *The JavaScript Object Notation (JSON) Data Interchange Format*.
+  <https://www.rfc-editor.org/rfc/rfc8259>
+- [SEC1] Certicom Research, *SEC 1: Elliptic Curve Cryptography*, version 2.0: point encoding (section 2.3.3).
+  <https://www.secg.org/sec1-v2.pdf>
+- [SP800-186] NIST, *Recommendations for Discrete Logarithm-based Cryptography: Elliptic Curve Domain Parameters*:
+  P-256. <https://doi.org/10.6028/NIST.SP.800-186>
+- [SP800-38D] NIST, *Recommendation for Block Cipher Modes of Operation: Galois/Counter Mode (GCM) and GMAC*.
+  <https://doi.org/10.6028/NIST.SP.800-38D>
+- [SP800-56A] NIST, *Recommendation for Pair-Wise Key-Establishment Schemes Using Discrete Logarithm Cryptography*,
+  revision 3: ECDH on P-256. <https://doi.org/10.6028/NIST.SP.800-56Ar3>
+- [TPM2] Trusted Computing Group, *TPM 2.0 Library*: TPM2_ECDH_ZGen, TPM2_MakeCredential, TPM2_ActivateCredential,
+  TPM2_Quote, PCRs. <https://trustedcomputinggroup.org/resource/tpm-library-specification/>
+- [WASM] W3C, *WebAssembly Core Specification*. <https://www.w3.org/TR/wasm-core-2/>
+
+### Informative
+- [KEYCLOAK] Keycloak, the open-source identity and access management server KeyClerk governs.
+  <https://www.keycloak.org/>
+- [KEYCLERK] KeyClerk, the engine this protocol is the edge side of. <https://github.com/keyclerk>
+- [RFC8785] A. Rundgren, B. Jordan, S. Erdtman, *JSON Canonicalization Scheme (JCS)*: a different canonical form,
+  named only to say this protocol does not use it. <https://www.rfc-editor.org/rfc/rfc8785>
+- [TPM2-TOOLS] tpm2-software, *tpm2-tools*: `tpm2_quote` and `tpm2_activatecredential`, whose output formats section 12
+  refers to. <https://github.com/tpm2-software/tpm2-tools>
+- [WEBAUTHN] W3C, *Web Authentication: An API for accessing Public Key Credentials, Level 3*: the PRF extension a passkey
+  derives a person's key with. <https://www.w3.org/TR/webauthn-3/>
