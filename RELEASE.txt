@@ -1,5 +1,5 @@
 profile: edge-protocol
-KeyClerk: 0.24.1
+KeyClerk: 0.26.3
 files:
   .clusterfuzzlite/Dockerfile  sha256 ed07bd08d153db12adc2ace9d881b915d1aeef7125fd6ce3b0a5e3f26f653c53
   .clusterfuzzlite/build.sh  sha256 a789d6632c92ec3d545365e629ef71395f80998851798b259d6e133e8dd4b3f0
@@ -9,7 +9,7 @@ files:
   .github/workflows/ci.yml  sha256 461c2d82a15c19944ddf26f77a1a06f45f2a02dc9052c6236f4d8cf23cc4ea00
   .github/workflows/release.yml  sha256 a1b248869651b865e871645b2bca69ffc2a0f8a3a76904d7f7b2477682ed12c4
   .github/workflows/scorecard.yml  sha256 59d5de3fdc40af3fb7ae35c608ee31658556f902894acacdbe71c46406208340
-  CHANGELOG.md  sha256 db45e366db00a903a2162b581fbfde54b1a3584e386029b57d80c73396027139
+  CHANGELOG.md  sha256 fb559e5cc830d6e8a4389ef814358249000780a1ff7bc858c7e876dfd95a21ff
   CONTRIBUTING.md  sha256 f77b3e5022d6cce78cf9f2c0ef76b72f0aae152ecc2c1ac26a9e1970eb85bb02
   LICENSE  sha256 57fb42fbcd0b037ce528ed8f72f1ec095d67bc6825ecf1448ff39be1fe68a4b4
   LICENSES/EUPL-1.2.txt  sha256 57fb42fbcd0b037ce528ed8f72f1ec095d67bc6825ecf1448ff39be1fe68a4b4
@@ -20,8 +20,8 @@ files:
   brand/keyclerk-lockup-dark.svg  sha256 b331efe48301086d5b9bc1ad378d1c82b49dcf78c4f58fad55bd178a19738133
   brand/keyclerk-lockup-light.svg  sha256 ad0bc0750e72ed3e3ae229a3a63e974cffea4ba36d1e4281ddc89ef11c3028d6
   brand/keyclerk-social.png  sha256 ab2a9e76be72238a16672e83686db5ce6abf787e6c2378c0679781ec68ef8d67
-  conformance/edge.json  sha256 6712978833e841205f1156d00995ff1db0432b24faa963665167e59cb73a8143
-  edge-protocol.md  sha256 6e796a22ee943455d056d2690994085e89802778227d1ea12f91ef8fdf5ba55b
+  conformance/edge.json  sha256 a445c2e70424b19f9a79baefdadc4b359d9de1f3e6ba8738975444eb240db277
+  edge-protocol.md  sha256 38e0e723384e27cae40f81cca3384007c9822d28a7a9175383924c4aef6601bd
   ruff.toml  sha256 89182d0831ecb50381fb1803bd5d9fb47829131be9d102bc655bd1276ef996cb
   tools/check.py  sha256 338e9fa2cc9b8e12769966188361790fa38dfffb2b7398a1f14979ad3fdbf7d5
   tools/envelope.py  sha256 b5f2ad3a3b915ef09876e1c69ea588bd4ad88177e5a3003b16b47c4a8de6d311

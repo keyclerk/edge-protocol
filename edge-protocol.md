@@ -6,7 +6,8 @@ of leases the desk has signed, and keeps doing so for a bounded time when the de
 
 Status: version 1 of the formats named below (`kc-edge-bundle-v3`, `kc-edge-ceiling-v2`, `kc-edge-officer-v2`,
 `kc-edge-ended-v2`, `kc-unlock-v2` and the others in section 4), as shipped with KeyClerk 0.24.0; version 1.1 adds the optional `governed_roles` member of the
-bundle (section 5), and version 1.2 the bundle long-poll (section 5), both from KeyClerk 0.25.0. The conformance set
+bundle (section 5), version 1.2 the bundle long-poll (section 5), both from KeyClerk 0.25.0, and version 1.3 the address fetched by
+request (section 7) instead of carried in the bundle, from KeyClerk 0.26.0. The conformance set
 in `conformance/edge.json` holds the vectors every implementation must reproduce. Words like "must" are normative. A verifier ignores a member of the bundle body that this version does not name, so an
 optional bundle member can be added without a new format name. Other signed objects (the ceiling, the officer's
 statements) have exactly the members named, and an extra one is refused.
@@ -54,7 +55,7 @@ signature. Two shapes, both JSON [RFC8259]:
 - **sealed** `{"bytes": base64(canonical JSON), "signature": hex, "key": hex, "key_id": hex16}`, exactly these members;
   the object inside names its `format` and the signer's `key_id`. Formats: `kc-edge-bundle-v3`, `kc-edge-ceiling-v2`
   (sealed by the officer), `kc-edge-ended-v2`, `kc-edge-carried-v1`, `kc-edge-key-rollover-v1`,
-  `kc-edge-escrow-ack-v1`, `kc-edge-escrow-status-v1`, `kc-edge-evidence-ack-v1`, `kc-policy-release-v1`.
+  `kc-edge-escrow-ack-v1`, `kc-edge-escrow-status-v1`, `kc-edge-evidence-ack-v1`, `kc-edge-email-v1`, `kc-policy-release-v1`.
 - **multi-signed** `{"bytes": ..., "signatures": [{"key", "key_id", "signature"}]}`: signed by exactly the keys named
   (each once, no other); the object inside names its `format`. Format: `kc-edge-officer-v2`.
 
@@ -112,9 +113,10 @@ not implement version 1.1 ignores the member.
 
 Acting on it: a role assignment per live lease (`username`, `role`, `until`); sessions approved only for a live lease
 or visit lease of that person and target (the `admit` policy), ended at `max_session_hours` and at lease end; visit
-leases install `ssh_key` for `username` until `until`. A lease's `email` is the identity broker's verified address, or
-null when it has none verified; it exists for access gateways that match a single sign-on login by e-mail, and is in
-leases only, on the edges where that person holds one.
+leases install `ssh_key` for `username` until `until`. A lease's `email` is null from version 1.3 (KeyClerk 0.26.0): an access gateway that matches a single sign-on
+login by e-mail fetches the address when it sets the credential (section 7, `GET /edge/lease/{lease_id}/email`)
+and keeps it nowhere. A lease's `person` is an opaque identifier, never parsed: on a desk that keeps the signed
+change log it is KeyClerk's internal anchor (`kc:` and 32 hex characters), not the identity broker's id.
 
 ## 6. Policy in the edge
 `edge.wasm` (entrypoints `keyclerk/edge/settings`, `admit`, `visit_window`, `attestation`) and `ceiling.wasm`
@@ -130,6 +132,7 @@ WebAssembly [WASM] runtime that runs OPA's compiled policies [OPA-WASM]). `setti
 | `POST /edge/relay` | `{key_id, envelope, purpose: "lease:<id>"}` to a holder of that lease; envelope context equal to purpose | `{relay_id}` |
 | `POST /edge/escrow` | `{system, item_id, envelopes [{key_id, envelope}] x2}` to designated custodians; context `escrow:<system>:<item>` | sealed escrow ack |
 | `GET /edge/escrow/{item}` | | sealed status; forget the value only when `confirmed` |
+| `GET /edge/lease/{lease_id}/email` | | sealed `kc-edge-email-v1` `{edge, lease_id, person, email, nonce, issued}` for a lease live on this edge (version 1.3); check the bundle key, this edge and lease, and that `nonce` is your request's own; use the address to set the credential and keep it nowhere; `email` null when the broker holds no verified address; 404 when the lease is not live here, 429 beyond six a minute per lease |
 | `POST /edge/incident` | `{kind, system, at, detail, log_sha256}`; kinds `break_glass_used`, `drift`, `evidence_floor`, `bind_without_session`, `other` | `{incident_id}` |
 | `POST /edge/evidence` | `{entries [{seq, prev, sha256, size, session, at}]}`, a chain: `prev` is sha256 of the previous entry's canonical bytes | sealed ack up to a sequence; a resend is no change |
 | `GET /edge/evidence` | | sealed head |
@@ -198,7 +201,8 @@ An assured edge proves three things; until it has, it gets what a basic edge get
 
 ## 13. Conformance
 `conformance/edge.json`: the policy cases, the bundle verifier, and the families `statements` (multi-signed),
-`ceilings` (sealed), `ended`, `unlock` (both sides reach one code, or both refuse) and `module_bytes`. Keys in it are
+`ceilings` (sealed), `ended`, `unlock` (both sides reach one code, or both refuse), `module_bytes`, `requests`
+(section 3) and `email` (section 7, version 1.3). Keys in it are
 fixed test seeds; never use them for anything else. An implementation conforms when it gives every recorded verdict.
 
 ## References
