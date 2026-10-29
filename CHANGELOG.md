@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.3.0 (2026-10-25, with KeyClerk 0.26.0)
+- The address leaves the bundle: a lease's `email` is null, and an edge whose gateway matches a single sign-on login
+  by e-mail fetches it when it sets the credential, `GET /api/v1/edge/lease/{lease_id}/email` (section 7): a sealed
+  `kc-edge-email-v1` for a lease live on that edge, bound to the request's nonce, never cached, rate-limited per
+  lease. The edge keeps the address nowhere. Verifiers of 1.2 keep working: the member is still there, null.
+- A lease's `person` is an opaque identifier: on a desk that keeps the signed change log it is KeyClerk's internal
+  anchor, not the identity broker's id.
+- Conformance: an `email` family: the answer for this lease and request, a null address, and another edge, another
+  lease, another request's nonce, another key, a malformed address and another format refused.
+
 ## 1.2.1 (2026-10-25)
 - References: every standard the specification builds on, normative and informative, each with a link, cited where
   it is first named (Ed25519, X25519, P-256, ECDH, HKDF, HMAC, SHA-256, base32 and base64, AES-256-GCM, JSON, SCIM,
