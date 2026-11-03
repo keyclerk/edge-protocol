@@ -1,0 +1,29 @@
+name: Implementations disagree
+description: Two readings of the specification, or an implementation and a vector, give different answers
+labels: [conformance]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What
+      description: The section, the input (a vector id or a minimal case) and the two answers.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why
+      description: Which reading you think is right, and what goes wrong with the other.
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Done when
+      description: The wording change or the vector that settles it.
+    validations:
+      required: true
+  - type: textarea
+    id: refs
+    attributes:
+      label: References
