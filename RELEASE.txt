@@ -37,9 +37,9 @@ files:
   edge-protocol.md  sha256 38e0e723384e27cae40f81cca3384007c9822d28a7a9175383924c4aef6601bd
   ruff.toml  sha256 89182d0831ecb50381fb1803bd5d9fb47829131be9d102bc655bd1276ef996cb
   tools/changelog.py  sha256 fee32e329abbc3f7abc6d46450be688c91f1d0ca227dbbc090b1dc04c0f58064
-  tools/check.py  sha256 338e9fa2cc9b8e12769966188361790fa38dfffb2b7398a1f14979ad3fdbf7d5
+  tools/check.py  sha256 82d5540a7dfc077b41a28afd9099644306e168f49505da7b5947a76891034e9a
   tools/envelope.py  sha256 b5f2ad3a3b915ef09876e1c69ea588bd4ad88177e5a3003b16b47c4a8de6d311
   tools/fuzz_envelope.py  sha256 960f6e5a8b468fcd08d94c7d9a24817dcb53341f244e8e33e293e1025756ac7c
   tools/leak_gate.py  sha256 3512d44f035dcfa39d9a640eceb761d7cade9d27e9ec1889fdcbe262f4bcb713
   tools/public_text_check.py  sha256 ee9c7ed1d31594899d23c4d5f66394987e8548a32ec9a97f4b7d47bb8d60351e
-  tools/requirements-ci.txt  sha256 8ef178b1c819bc68628160b5766ab7afa38e1abeef8a9e47a68d1fe3774ff6ed
+  tools/requirements-ci.txt  sha256 d60b207cdee89c63239112987f89248e191aca130c151233bd8fd3758e289fea
