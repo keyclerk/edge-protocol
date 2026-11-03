@@ -1,6 +1,8 @@
 # SPDX-License-Identifier: EUPL-1.2
 """Checks this repository holds together: the conformance set parses, the section 4 reader (tools/envelope.py) agrees
-with the bundle verifier's recorded verdicts, every file RELEASE.txt lists has the hash it lists, and every relative
+with the bundle verifier's recorded verdicts, every released file RELEASE.txt lists has the hash it lists (the
+specification, the conformance set, the reference tools, the licence; CI files and pinned CI tools may move between
+releases), and every relative
 link in the Markdown files points at a file that exists. Standard library only.
 
     python3 tools/check.py
@@ -12,6 +14,8 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+# what a release's readers verify by hash; the repository's own tooling is checked by CI, not pinned to a release
+RELEASED = ("edge-protocol.md", "conformance/", "tools/envelope.py", "tools/check.py", "LICENSE", "NOTICE")
 LINK = re.compile(r"\]\(([^)\s]+)\)|(?:src|srcset|href)=\"([^\"]+)\"")
 
 
@@ -107,6 +111,8 @@ def main() -> int:
     if not listed:
         errors.append("RELEASE.txt lists no files")
     for name, digest in listed:
+        if not name.startswith(RELEASED):
+            continue
         f = ROOT / name
         if not f.is_file():
             errors.append(f"{name}: listed in RELEASE.txt, missing")
