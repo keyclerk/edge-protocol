@@ -9,3 +9,10 @@ format version or new vectors, and the report is credited unless you ask otherwi
 The protocol's own defences are in the specification: exact-byte signatures with one signing mode, keys pinned on
 site by people, serial and time floors kept by the edge, complete bundles, horizons that bound offline use, and
 notices bound to the enrolment they end.
+
+## Supported versions
+
+| Version | Supported |
+|---|---|
+| 1.3 | yes: fixes and new vectors |
+| 1.0 to 1.2 | verifiable: a 1.3 verifier still accepts their formats, but they get no new vectors |

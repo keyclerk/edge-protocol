@@ -1,0 +1,29 @@
+name: Proposal
+description: A change to the protocol or its conformance set
+labels: [enhancement]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What
+      description: What an edge or a desk should do that it cannot do with the current version.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why
+      description: Who needs it, and what it guards against. Say whether an edge of the current version keeps working.
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Done when
+      description: The sections and vectors that show it, each checkable.
+    validations:
+      required: true
+  - type: textarea
+    id: refs
+    attributes:
+      label: References
