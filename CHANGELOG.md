@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.4.0 (2026-11-04, with KeyClerk 0.27.0)
+- A `lease_ended_early` incident (version 1.4, section 7): the bastion took away a lease's assignment before the
+  lease's `until`. It names the lease (`lease_id`), the bastion (`system`) and when (`at`); the desk refuses a lease
+  its last bundle no longer carries and an end at or after `until`. A bastion adapter checks at start for settings
+  known to take an assignment away early and reports each as `drift`.
+- The ceiling policy judges a lease or visit lease by its hours rounded up to whole hours, at least one (version
+  1.4, section 5): rounded down, a lease up to 59 minutes over `max_lease_hours` passed. New conformance family
+  `ceiling_hours`.
+- The bundle carries `records_head {revision, head, size?}`, the records it was cut from, and the report echoes it
+  (version 1.4, sections 5 and 7.1): edges as weak witnesses of the records. A verifier refuses a malformed or null
+  `records_head`.
+- The report confirms removals per lease (`removals [{lease_id, system, at}]`, the leaver proof) and declares the
+  bastion's own enforcement (`bastion {product, version, capabilities, adapter?}`, a token vocabulary in section 7.1);
+  an evidence entry may name the lease its session ran under (`lease_id`). Section 7.2 states the adapter profile.
+  New conformance family `reports`; verifier cases for the records head.
+
 ## 1.3.0 (2026-10-25, with KeyClerk 0.26.0)
 - The address leaves the bundle: a lease's `email` is null, and an edge whose gateway matches a single sign-on login
   by e-mail fetches it when it sets the credential, `GET /api/v1/edge/lease/{lease_id}/email` (section 7): a sealed
