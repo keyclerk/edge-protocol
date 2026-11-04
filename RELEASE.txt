@@ -1,5 +1,5 @@
 profile: edge-protocol
-KeyClerk: 0.26.3
+KeyClerk: 0.27.0
 files:
   .clusterfuzzlite/Dockerfile  sha256 ed07bd08d153db12adc2ace9d881b915d1aeef7125fd6ce3b0a5e3f26f653c53
   .clusterfuzzlite/build.sh  sha256 a789d6632c92ec3d545365e629ef71395f80998851798b259d6e133e8dd4b3f0
@@ -15,7 +15,7 @@ files:
   .github/workflows/public-text.yml  sha256 97151acd9e843db1ea2c78b98b98292f988895bbda4692e5c948c148f86e2907
   .github/workflows/release.yml  sha256 77fa1b2e9935690d3531abf405a0817916fb9bbd7305037ee08000e209162518
   .github/workflows/scorecard.yml  sha256 467df2a74692a1df75bcdcb6cf03e7e67a44287168a7906fa233d9baddf53761
-  CHANGELOG.md  sha256 fb559e5cc830d6e8a4389ef814358249000780a1ff7bc858c7e876dfd95a21ff
+  CHANGELOG.md  sha256 fec6084604f0177d612dd1520838054e58a359d669f94a3dcebf22cb2eadab41
   CODE_OF_CONDUCT.md  sha256 ef45f8b74bed9f725eba033667af8893b1c2c352d910ef3efc2478874eb5ba29
   CONTRIBUTING.md  sha256 f77b3e5022d6cce78cf9f2c0ef76b72f0aae152ecc2c1ac26a9e1970eb85bb02
   GOVERNANCE.md  sha256 044c01971815d1e8c5298e188826b6d402d9d63938781a3ab9c142ade434d4fb
@@ -25,7 +25,7 @@ files:
   NOTICE  sha256 4b0639b8f675242eb30284552f31497a7010cf3e49c954bb24d6b7fbae43a660
   README.md  sha256 613bbea4b2b53c934c6543e77881fd5c331b9cc52cd34e4523f3ac1584d84afc
   REUSE.toml  sha256 c0441bb346d34f3ecaa91428125018597fee3ffec11308dab42bb34c0d2a1f1a
-  ROADMAP.md  sha256 91e3c958b40aa0479d0be67e2bc121acd8c42778decfedf2695189e759f5e433
+  ROADMAP.md  sha256 91571df02b35c53d6b734ac1ad63ecccbfb6b782371329b80c91b8c87ca7e952
   SECURITY.md  sha256 2875b8b6ea9155b67acfc4e6f2d9eebd6dd95d079ca18fa664d4b345b01f6034
   SUPPORT.md  sha256 22ff2b9f27d4b86aae872c1ad172c4d622d1652ce361d57e3e674424f462bba5
   TRADEMARK.md  sha256 b2553b3c96f2f807baf504fe711edb5f5beb19d936c010d90fd8b4aa6eb77c70
@@ -33,13 +33,13 @@ files:
   brand/keyclerk-lockup-light.svg  sha256 ad0bc0750e72ed3e3ae229a3a63e974cffea4ba36d1e4281ddc89ef11c3028d6
   brand/keyclerk-social.png  sha256 ab2a9e76be72238a16672e83686db5ce6abf787e6c2378c0679781ec68ef8d67
   changelog.d/README.md  sha256 cc218d17f1f274c080ed5676399a3f661d29067b84c19000d56c2531a192de79
-  conformance/edge.json  sha256 a445c2e70424b19f9a79baefdadc4b359d9de1f3e6ba8738975444eb240db277
-  edge-protocol.md  sha256 38e0e723384e27cae40f81cca3384007c9822d28a7a9175383924c4aef6601bd
+  conformance/edge.json  sha256 d505b4eef51a4c5fb686dfff533ba447d43a906dfb46b19e93e609f137677b48
+  edge-protocol.md  sha256 6915b15897a67d0e79d5c9056257eec4cb73b47fd6d31b9b323b459025169d85
   ruff.toml  sha256 89182d0831ecb50381fb1803bd5d9fb47829131be9d102bc655bd1276ef996cb
   tools/changelog.py  sha256 fee32e329abbc3f7abc6d46450be688c91f1d0ca227dbbc090b1dc04c0f58064
   tools/check.py  sha256 82d5540a7dfc077b41a28afd9099644306e168f49505da7b5947a76891034e9a
   tools/envelope.py  sha256 b5f2ad3a3b915ef09876e1c69ea588bd4ad88177e5a3003b16b47c4a8de6d311
   tools/fuzz_envelope.py  sha256 960f6e5a8b468fcd08d94c7d9a24817dcb53341f244e8e33e293e1025756ac7c
   tools/leak_gate.py  sha256 3512d44f035dcfa39d9a640eceb761d7cade9d27e9ec1889fdcbe262f4bcb713
-  tools/public_text_check.py  sha256 ee9c7ed1d31594899d23c4d5f66394987e8548a32ec9a97f4b7d47bb8d60351e
+  tools/public_text_check.py  sha256 21383f2559bfbceacde7e4ce9f611fe078b1f3124c86a907383a1bf5d2f28a06
   tools/requirements-ci.txt  sha256 d60b207cdee89c63239112987f89248e191aca130c151233bd8fd3758e289fea
