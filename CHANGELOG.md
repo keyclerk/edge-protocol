@@ -1,5 +1,26 @@
 # Changelog
 
+## 1.5.0 (2026-11-06, with KeyClerk 0.28.0)
+- The edge's trusted time is stated (version 1.5, section 1): every end is judged at the later of the wall clock and
+  the trusted time recorded at the last verified bundle plus the boot clock since, so a wall clock set back or held
+  still keeps nothing alive; an end is acted on at most 10 minutes late. Version 1.4 said only "the later of the clock
+  and the newest signed time", which a clock held at the newest signed time defeats while the edge is cut off. After
+  a reboot nothing positive is live until the desk's time arrives: `GET /edge/time` answers a signed request with
+  `kc-edge-time-v1`, echoing its nonce, within 30 seconds on the boot clock. At least once an hour the edge records a
+  new anchor, the later raw reading, so a frozen boot clock or a set-back wall clock alone loses or gains nothing. New
+  conformance families `trusted_time`, `ratchet` and `time`.
+- A start is a widening (version 1.5, section 1): the edge policy's admit takes `now_start`, the earlier reading, for a
+  lease's or visit lease's start, and `now`, the trusted time, for its end and horizon; without `now_start` it judges
+  both on `now` as before. A bundle never re-anchors an edge after a reboot; its reductions are stored at once.
+- Starts are judged on a start anchor that only verified time sets (the newest bundle's issue time or the desk's time
+  answer), never on the ratchet's anchor, which a wall clock set forward raises at the next wake; family `start_time`.
+- A node of a high-availability edge says how it became active (version 1.5, section 7.3): `activation {by, at,
+  statement?}`, by `witness`, `local_witness` or `break_glass` with the site key's promotion statement, which the
+  desk verifies.
+- Relays and the site key (version 1.5, section 14): the officer-certified relay certificate `kc-edge-relay-v1`, its
+  tightenings `kc-edge-tighten-v1` that only narrow, and the site key's `kc-edge-site-v1` statements for a
+  provisional replacement or a promotion. New conformance family `relays`; activation cases in `reports`.
+
 ## 1.4.0 (2026-11-04, with KeyClerk 0.27.0)
 - A `lease_ended_early` incident (version 1.4, section 7): the bastion took away a lease's assignment before the
   lease's `until`. It names the lease (`lease_id`), the bastion (`system`) and when (`at`); the desk refuses a lease
