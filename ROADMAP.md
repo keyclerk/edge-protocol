@@ -13,5 +13,8 @@ edge ports once per version.
 - 1.1.0: governed roles in the bundle.
 - 1.0.0: the first public specification and conformance set.
 
+## Next: 1.6.0, with KeyClerk 0.29.0
+- #18 An expiry on the site key's promotion statement, so a statement cannot promote a node twice.
+
 ## Later
 - Session constraints carried in the lease, with KeyClerk 0.31.0.
